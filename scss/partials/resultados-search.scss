@@ -1,0 +1,204 @@
+$ochentaycinco:85px;
+$doscientosochenta: 280px;
+
+.search{
+  .container{
+    &.principal{
+      min-height: 100vh;
+      margin-bottom: $unit100;
+    }
+  }
+  .e-title-calidad{
+      margin-top: $v-unit-m;
+      margin-bottom: $v-unit-m;
+      &.faq{
+        max-width: 972px;
+        margin:0 auto;
+        margin-top: $v-unit-l;
+      }
+  }
+  .flex{
+      @include display-flex;
+      @include justify-content(space-between);
+      @include flex-wrap(wrap);
+      .b-entrada {
+          @include display-flex;
+          @include flex-direction-column;
+          .title{
+              margin-bottom: $v-unit-m;
+              font-size: $fs-large;
+              font-weight: bolder;
+          }
+          picture{
+              overflow: hidden;
+              border-radius: $br-thin;
+              img{
+                  width: 100%;
+                  height: auto;
+                  object-fit: contain;
+                  border-radius: $br-thin;
+              }
+          }
+          @include respond-above(md){
+              @include flex(0,0,48%);
+          }
+          @include respond-below(md){
+              @include flex(0,0,100%);
+          }
+          &.--noticias{
+              background-color: $beige-franjas2;
+              border-radius: $br-big;
+          
+              .wrapper {
+                picture {
+                  min-height: $doscientosochenta;
+                  border-radius: $br-big $br-big 0 0;
+                  overflow: hidden;
+                  position: relative;
+          
+                  img {
+                    display: block;
+                    position: absolute;
+                    height: 100%;
+                    object-fit: cover;
+                    top: 0;
+                    left: -50%;
+                    right: -50%;
+                    margin: auto;
+                  }
+                }
+          
+                .e-content {
+                  padding: 0 $v-unit-m $v-unit-m;
+                }
+          
+                .title {
+                  font-size: $fs-veintiocho;
+                  font-weight: bolder;
+                }
+          
+                .e-date {
+                  margin-bottom: $v-unit-m;
+                }
+              }
+          
+              @include respond-above(md) {
+                @include flex(0, 0, 30%);
+              }
+          
+              @include respond-between(xs, md) {
+                @include flex(0, 0, 47%);
+              }
+          
+              @include respond-below(xs) {
+                @include flex(0, 0, 100%);
+              }
+          }
+
+      }
+
+      .b-producto {
+          margin-bottom: $v-unit-l;
+          @include flex(0, 0, 30%);
+      
+          .e-producto {
+            cursor: default;
+            display: block;
+            @include display-flex();
+            @include flex-direction-column;
+            @include justify-content(center);
+            @include align-items(flex-start);
+      
+            .e-title {
+              font-size: $fs-footer;
+              font-family: $ff-secondary;
+              font-weight: 900;
+            }
+      
+            picture {
+              min-width: $ochentaycinco;
+              margin-right: $v-unit-m;
+            }
+      
+            .e-content {
+              flex: 0 60%;
+              display: block;
+      
+              p {
+                font-size: $fs-standard;
+                font-weight: $fw-bold;
+              }
+            }
+          }
+      }
+  }
+  .unfound{
+    margin-top:$h-unit-l;
+    padding: 0 $h-unit;
+    a{
+      color: $new;
+      transition: color 0.3s linear;
+      &:hover{
+        color:$black;
+      }
+    }
+  }
+
+  .search-faq{
+    max-width: 972px;
+    margin:0 auto;
+    @include respond-above(md){
+      padding: $v-unit-l 0 $unit100 0;
+    }
+    @include respond-below(md){
+        padding: $v-unit-l $h-unit $v-unit-xl $h-unit;
+    }
+  }
+
+  .e-paginador{
+    @include display-flex;
+    margin-top: $v-unit-xl;
+    a{
+        font-family: $ff-main;
+        text-transform: uppercase;
+        font-weight: $fw-semibold;
+        @include display-flex;
+        @include flex-direction-column;
+        @include align-items(center);
+        width: fit-content;
+        .e-arrow{
+            margin-bottom: $v-unit-s;
+            &.--atras{
+                @include transform-scaleX(-1);
+            }
+        }
+        .ico-flecha::before{
+            color: $new;
+            transition: color 0.3s linear;
+        }
+        &:hover{
+            .ico-flecha::before{
+                color:$granate;
+            }
+        }
+        @include respond-above(md){
+            font-size: $fs-heading;
+        }
+        @include respond-below(md){
+            font-size: $fs-standard;
+        }  
+    }
+
+    a:nth-of-type(2n){
+        margin-left: $v-unit-xl;
+    }
+    @include respond-above(md){
+        @include justify-content(flex-end);
+    }
+    @include respond-below(md){
+        @include justify-content(center);
+        margin-bottom: $v-unit-xl;
+    }
+  }
+  
+}

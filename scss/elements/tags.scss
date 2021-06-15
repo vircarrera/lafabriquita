@@ -1,0 +1,21 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.e-tags {
+  font-size: 25px;
+  font-weight: 500;
+
+  &.--blog {
+    margin-top: $v-unit-m;
+    text-align: right;
+
+    span {
+      display: none;
+    }
+  }
+}

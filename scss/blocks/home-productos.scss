@@ -1,0 +1,46 @@
+.home {
+  .c-home-productos {
+    text-align: center;
+    background-color: $beige-franjas;
+    position: relative;
+
+    @include respond-above(md) {
+      padding: 20px 0 127px 0;
+    }
+    @include respond-below(md) {
+      padding: 20px 0 90px 0;
+    }
+
+    .h2 {
+      margin: 0;
+
+      @include respond-above(md) {
+        padding: $v-unit-l 25%;
+      }
+
+      @include respond-below(md) {
+        padding: $v-unit-m 10%;
+      }
+    }
+
+    p {
+      font-weight: $fw-semibold;
+
+      @include respond-above(md) {
+        font-size: $fs-treinti;
+        padding: 0 25%;
+      }
+
+      @include respond-below(md) {
+        font-size: $fs-medium;
+        padding: 0 10%;
+      }
+    }
+
+    .slider-relacionados {
+      @include respond-below(md) {
+        margin-top: $v-unit-l;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.blog {
+  .background{
+    background-color: $beige-general;
+    z-index: 200;
+  }
+  .familias {
+    @include display-flex;
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    padding-top: $v-unit-xl;
+    padding-bottom: $unit50;
+  }
+  .b-card{
+    &.--familia{
+      padding-left: 0;
+      @include respond-below(md){
+        padding-left: $h-unit;
+      }
+    }
+  } 
+
+}

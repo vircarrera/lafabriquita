@@ -1,0 +1,39 @@
+$seventy: 70px;
+$forty: 40px;
+
+.page-template-page-universo{
+    .background{
+        background-color: $beige-general;
+        z-index: 200;
+    }
+    .c-intro{
+        padding: $forty 0;
+        .container{
+            @include display-flex;
+            @include flex-direction-column;
+            @include justify-content(center);
+            text-align: center;
+            figure{
+                @include flex-center;
+                margin: $v-unit-l 0;
+                &.full { 
+                    @include respond-below(md){
+                        display: none;
+                    }
+                }
+                &.movil {
+                    @include respond-above(md){
+                        display: none;
+                    }
+                }
+            }
+            .p{
+                font-size: $fs-medium;
+            }
+            @include respond-above(md){
+                padding: 0 $seventy;
+            }
+        }
+
+    }
+}

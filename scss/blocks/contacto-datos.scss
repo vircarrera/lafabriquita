@@ -1,0 +1,89 @@
+//
+// Vars
+//
+$separador-border: 2px solid black;
+$separador-border-radius: 3px;
+$separador-width: 120px;
+$separador-height: 180px;
+
+//
+// Styles
+//
+
+.b-contacto.datos {
+  background: $beige-franjas2;
+  padding-top: $v-unit-xxl;
+  padding-bottom: $v-unit-xxl;
+  position: relative;
+  z-index: 200;
+
+  .clip-inferior {
+    overflow: initial;
+    bottom: auto;
+    top: 0;
+  }
+
+  .container {
+    @include display-flex();
+    @include justify-content(space-between);
+    @include align-items(center);
+
+    .flex {
+      @include flex(0, 0, 47%);
+      text-align: center;
+
+      &.whatsapp {
+        @include display-flex();
+        @include flex-direction-column();
+        @include align-items(center);
+      }
+    }
+
+    .e-separador {
+      border: $separador-border;
+      border-radius: $separador-border-radius;
+    }
+
+    .e-figure {
+      margin-bottom: -20px;
+    }
+
+    @include respond-above(md) {
+      @include flex-direction-row();
+
+      .e-title {
+        font-size: 45px;
+      }
+
+      .e-separador {
+        height: $separador-height;
+      }
+    }
+
+    @include respond-below(md) {
+      @include flex-direction-column();
+      padding-left: $v-unit-l;
+      padding-right: $v-unit-l;
+
+      .e-title {
+        font-size: 30px;
+        font-weight: 800;
+        margin-bottom: $v-unit-l;
+
+        &::after {
+          content: "";
+          border: $separador-border;
+          width: $separador-width;
+          display: block;
+          margin: $v-unit-l auto 0;
+          border-radius: $separador-border-radius;
+        }
+      }
+
+      .e-separador {
+        margin-top: $v-unit-l;
+        width: $separador-width;
+      }
+    }
+  }
+}

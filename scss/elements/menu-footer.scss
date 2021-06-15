@@ -1,0 +1,121 @@
+//
+// Vars
+//
+
+$separador-style: 4px solid $golden;
+
+//
+// Styles
+//
+
+footer {
+  .e-menu {
+    a{
+      transition: color 0.3s linear;
+      &:hover{
+        color: $new;
+      }
+    }
+    &.--top {
+      @include display-flex;
+      @include justify-content(space-between);
+      @include align-items(stretch);
+      flex-wrap: wrap;
+
+      & > li {
+        margin-bottom: $v-unit-l;
+        position: relative;
+
+        &.menu-item-58,
+        &.menu-item-63 {
+          &::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            border-radius: 3px;
+            background-color: $golden;
+            position: absolute;
+            bottom: 0;
+          }
+        }
+
+        & > a {
+          display: block;
+          text-transform: uppercase;
+          font-weight: 800;
+          font-family: $ff-secondary;
+          margin-bottom: $v-unit-l;
+          font-size: $fs-large;
+        }
+
+        & > .sub-menu {
+          * {
+            font-size: $fs-medium;
+            font-weight: $fw-bold;
+            font-family: $ff-main;
+          }
+
+          & > li {
+            margin-bottom: $v-unit-m;
+          }
+
+          .sub-menu {
+            li {
+              margin-top: $v-unit-m;
+            }
+          }
+        }
+
+        img,
+        .cta {
+          display: none;
+        }
+
+        @include respond-above(md) {
+          @include flex(0, 0, 35%);
+
+          &:nth-of-type(2),
+          &:nth-of-type(4) {
+            * {
+              text-align: right;
+            }
+
+            &::after {
+              right: 0;
+            }
+          }
+        }
+        @include respond-below(md) {
+          @include flex(0, 0, 100%);
+
+          * {
+            text-align: center;
+          }
+
+          &::after {
+            right: 0;
+            left: 0;
+            margin: auto;
+          }
+        }
+      }
+    }
+    &.--redes.--footer {
+      li {
+        display: inline-block;
+        margin: 0 $v-unit-m;
+
+        i {
+          font-size: 40px;
+        }
+      }
+    }
+
+    &.--legal {
+      @include display-flex;
+      @include justify-content(space-between);
+      @include align-items(center);
+    }
+  }
+}

@@ -1,0 +1,22 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.b-legal {
+  background: $beige-franjas2;
+}
+
+.copyright {
+  background: $golden;
+  text-align: center;
+  padding: $v-unit-s;
+}
+
+.b-legal,
+.copyright {
+  padding: $v-unit-s;
+}

@@ -1,0 +1,100 @@
+$dossesenta: 260px;
+$cuatrocientos: 400px;
+$unotreinta: 130px;
+$unocincuenta: 150px;
+$trescientos: 300px;
+
+.page-template-page-universo {
+  .c-artesanal {
+    position: relative;
+    @include respond-below(md) {
+      padding-bottom: $unit100;
+    }
+    @include respond-above(md) {
+      padding-bottom: $unocincuenta;
+    }
+
+    .b-artesanal {
+      &.--uno,
+      &.--dos {
+        .container {
+          @include display-flex;
+          @include justify-content(space-between);
+          img {
+            border-radius: $br-thin;
+            overflow: hidden;
+          }
+          @include respond-above(sm) {
+            .texto {
+              @include flex(0, 0, 48%);
+              @include display-flex;
+              @include flex-direction-column;
+              @include justify-content(flex-end);
+            }
+            .img {
+              @include flex(0, 0, 48%);
+            }
+          }
+          @include respond-below(sm) {
+            @include flex-wrap(wrap);
+            .texto {
+              @include flex(0, 0, 100%);
+              margin: $v-unit-m 0;
+            }
+            .img {
+              @include flex(0, 0, 100%);
+              figure {
+                @include flex-center;
+                img {
+                  width: calc(100vw - 30px);
+                  height: calc(100vw - 30px);
+                  object-fit: cover;
+                  max-width: $cuatrocientos;
+                  max-height: $cuatrocientos;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.--uno {
+        background-color: $beige-franjas2;
+        figure {
+          margin-top: -$dossesenta;
+        }
+        @include respond-above(sm) {
+          .img {
+            figure {
+              margin-top: -$v-unit-xl;
+            }
+          }
+        }
+        @include respond-above(md) {
+          margin-top: $unotreinta;
+        }
+        @include respond-below(md) {
+          margin-top: $trescientos;
+        }
+
+        .container {
+          padding-bottom: $unocincuenta;
+          @include respond-below(sm) {
+            .texto {
+              order: 2;
+            }
+            .img {
+              order: 1;
+            }
+          }
+        }
+      }
+
+      &.--dos {
+        figure {
+          margin-top: -$v-unit-xxl;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+$one: 1px;
+$ochenta: 80px;
+$cientotrece: 113px;
+
+.clip-inferior {
+  position: absolute;
+  bottom: -$one;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+
+  svg {
+    position: absolute;
+    display: block;
+    width: calc(163% + 1.3px);
+    transform: rotate(180deg);
+    bottom: -$one;
+    right: 0;
+    @include respond-above(md) {
+      height: $cientotrece;
+    }
+    @include respond-between(sm, md) {
+      height: $ochenta;
+    }
+    @include respond-below(sm) {
+      height: $unit50;
+    }
+  }
+
+  &.blanco {
+    .shape-fill {
+      fill: #ffffff;
+    }
+  }
+
+  &.redesmobile {
+    width: calc(100% + 30px);
+    margin: 0 -15px;
+    bottom: 30px;
+  }
+
+  &.granate {
+    .shape-fill {
+      fill: $granate;
+    }
+  }
+
+  &.beige-franjas {
+    .shape-fill {
+      fill: $beige-franjas;
+    }
+
+    &.calidad {
+      @include respond-below(md) {
+        .shape-fill {
+          fill: $beige-franjas2;
+        }
+      }
+    }
+  }
+
+  &.beige-franjas2 {
+    .shape-fill {
+      fill: $beige-franjas2;
+    }
+  }
+
+  &.beige {
+    .shape-fill {
+      fill: $beige-general;
+    }
+
+    &.calidad {
+      @include respond-below(md) {
+        .shape-fill {
+          fill: $beige-franjas2;
+        }
+      }
+    }
+
+    &.familia {
+      .c-aplicaciones & {
+        top: auto;
+      }
+    }
+  }
+}

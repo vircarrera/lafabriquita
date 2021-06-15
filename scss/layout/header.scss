@@ -1,0 +1,88 @@
+//
+// Vars
+//
+
+$headerHeight: 60px;
+$e-logo-height: 60px;
+$topminheight: calc(#{$e-logo-height} + #{$v-unit-m});
+
+//
+// Styles
+//
+
+.c-header {
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+
+  .b-header {
+    position: relative;
+
+    &.--top {
+      background-color: $beige-general;
+      position: relative;
+      min-height: $topminheight;
+      @include display-flex;
+      @include justify-content(center);
+      @include align-items(center);
+
+      .container {
+        @include flex(0, 0, 100%);
+        @include display-flex;
+        @include align-items(center);
+        @include justify-content(flex-end);
+      }
+
+      .e-logo {
+        display: block;
+        width: 155px;
+        height: 155px;
+        height: $e-logo-height;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: $v-unit-s;
+        margin: auto;
+      }
+    }
+
+    &.--bottom {
+      .container{
+        @include respond-below(md){
+          overflow: scroll;/*tocado*/
+        }
+
+      }
+      @include respond-above(md) {
+        background-color: $beige-franjas;
+      }
+
+      @include respond-below(md) {
+        background-color: $beige-franjas2;
+        // max-height: 0vh;/*tocado*/
+        height:0;/*tocado*/
+        overflow: hidden;
+        transition: $transition;
+        opacity: 0;/*tocado*/
+        transition: height 0.5s ease-in, opacity 0.5s ease-in;
+
+        .container {
+          min-height: 100%; /*era height*/
+        }
+      }
+    }
+  }
+
+  @include respond-above(md) {
+    .e-burger {
+      opacity: none;
+      pointer-events: none;
+    }
+  }
+
+  @include respond-below(md) {
+    .e-burger {
+      opacity: 100%;
+    }
+  }
+}

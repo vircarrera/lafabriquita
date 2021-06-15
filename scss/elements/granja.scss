@@ -1,0 +1,10 @@
+.e-granja{
+    max-width: 1334px;
+    overflow: hidden;
+    @include respond-above(md){
+        min-width: 1550px;
+    }
+    @include respond-below(md){
+        min-width: 1042px;
+    }
+}

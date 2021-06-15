@@ -1,0 +1,53 @@
+//
+// Vars
+//
+
+$flickity-arrows-top: 80px;
+
+//
+// Styles
+//
+
+// flickity dots
+.flickity-prev-next-button {
+  top: $flickity-arrows-top;
+}
+
+/* no circle */
+.flickity-button {
+  background: transparent;
+}
+
+/* position dots in carousel */
+.flickity-page-dots {
+  bottom: $v-unit-s !important;
+
+  .page-template-page-familia & {
+    @include respond-above(md) {
+      bottom: 80px !important;
+    }
+    @include respond-below(md) {
+      bottom: $v-unit-l !important;
+    }
+  }
+}
+
+/* white circles */
+.flickity-page-dots .dot {
+  width: 12px !important;
+  height: 12px !important;
+  opacity: 1 !important;
+  background: transparent !important;
+  border: 2px solid white !important;
+}
+
+/* fill-in selected dot */
+.flickity-page-dots .dot.is-selected {
+  background: white !important;
+}
+
+/* position outside */
+.flickity-prev-next-button.previous {
+}
+.flickity-prev-next-button.next {
+}

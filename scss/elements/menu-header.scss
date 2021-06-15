@@ -1,0 +1,530 @@
+//
+// Vars
+//
+$submenu-productos-left: -100%;
+$submenu-productos-padding: 100px 80px;
+$submenu-servicios-left: -280%;
+$submenu-servicios-padding: 50px 450px 130px 60px;
+$submenu-que-es-left: -180%;
+$submenu-que-es-padding: 50px;
+$submenu-blog-left: 100px;
+$submenu-blog-padding-left: $v-unit-l;
+$submenu-blog-min-width: 415px;
+$separador-style: 4px solid $golden;
+$fs-icons-mobile: 40px;
+//
+// Styles
+//
+
+header {
+  .e-menu {
+    a {
+      transition: color 0.3s linear;
+      cursor: pointer;
+      &:hover {
+        color: $new;
+      }
+    }
+    &.--redes {
+      @include display-flex;
+
+      ul {
+        @include display-flex;
+
+        li {
+          margin: 0 $h-unit-xs;
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+
+      @include respond-below(md) {
+        .e-search {
+          order: 2;
+          width: 30px;
+          overflow: hidden;
+          display: none;
+        }
+
+        ul {
+          order: 1;
+          .menu-item-75,
+          .menu-item-76,
+          .menu-item-77,
+          .menu-item-78 {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &.--top {
+      position: relative;
+
+      @include respond-above(md) {
+        @include display-flex;
+        @include justify-content(center);
+        @include align-items(flex-start);
+
+        ul {
+          @include display-flex;
+          @include justify-content(center);
+          @include align-items(flex-start);
+
+          &.menu > li {
+            margin: 0 $h-unit-m;
+            padding: $v-unit-m 0;
+            position: relative;
+
+            &:hover {
+              @include respond-above(md){
+                & > .sub-menu {
+                  opacity: 100%;
+                  pointer-events: initial;
+                  height: auto !important;
+                  overflow: inherit;
+                  width: auto !important;
+                  transform: translateY(-4px) !important;
+  
+                  &:before {
+                    content: "";
+                    display: block;
+                    width: 7px;
+                    height: 7px;
+                    border: 15px solid $white;
+                    border-bottom-color: transparent;
+                    border-left-color: transparent;
+                    border-radius: 3px;
+                    transform: rotate(-45deg);
+                    position: absolute;
+                    top: -10px;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                  }
+  
+                  .item-blog > .sub-menu {
+                    opacity: 100%;
+                    pointer-events: initial;
+                    height: auto !important;
+                    width: auto !important;
+                    min-width: $submenu-blog-min-width !important;
+                  }
+                }
+              }
+
+            }
+          }
+
+          // Todos los submenús
+          .sub-menu {
+            @include display-flex;
+            @include flex-direction-column;
+            @include justify-content(center);
+            @include align-items(flex-start);
+            transition: $transition;
+            background-color: $white;
+            position: absolute;
+            z-index: 10;
+            top: $v-unit-xl;
+            border-radius: $br-big;
+            height: 0;
+            width: 0;
+            opacity: 0;
+            padding: 0;
+            overflow: hidden;
+            pointer-events: none;
+
+            li {
+              font-size: $fs-medium;
+              font-weight: $fw-bold;
+              font-family: $ff-main;
+            }
+
+            @include respond-below(md){
+              &.open {
+                opacity: 100%;
+                pointer-events: initial;
+                height: auto !important;
+                overflow: inherit;
+                width: auto !important;
+                transform: translateY(-4px) !important;
+
+                &:before {
+                  content: "";
+                  display: block;
+                  width: 7px;
+                  height: 7px;
+                  border: 15px solid $white;
+                  border-bottom-color: transparent;
+                  border-left-color: transparent;
+                  border-radius: 3px;
+                  transform: rotate(-45deg);
+                  position: absolute;
+                  top: -10px;
+                  left: 0;
+                  right: 0;
+                  margin: auto;
+                }
+              }
+
+              &.closed{
+                height: 0;
+                width: 0;
+                opacity: 0;
+                padding: 0;
+                overflow: hidden;
+                pointer-events: none;
+              }
+            }
+          }
+
+          // El item servicios
+          .item-servicios {
+            // El submenú servicios
+            & > .sub-menu {
+              left: $submenu-servicios-left;
+              padding: $submenu-servicios-padding;
+              @include display-flex();
+              align-items: stretch;
+
+              &:before {
+                left: 0;
+                right: 0;
+                margin: auto;
+              }
+
+              li {
+                padding: $v-unit-s;
+                padding-left: 0;
+                border-bottom: $separador-style;
+
+                &:last-child {
+                  border-bottom: none;
+                }
+              }
+
+              // El item blog, al que sub añadimos muestras y catálogo.
+              .item-blog {
+                position: relative;
+
+                // El submenú blog, que contiene muestras y catálogo.
+                .sub-menu {
+                  @include flex-direction-row;
+                  @include align-items(flex-start);
+                  min-width: $submenu-blog-min-width;
+                  padding-left: $submenu-blog-padding-left;
+                  left: $submenu-blog-left;
+                  position: absolute;
+                  top: 0;
+                  background: none;
+
+                  //El subitem catálogos, que tiene el enlace bajo la imagen oculto.
+                  .item-catalogos {
+                    a {
+                      &:last-child {
+                        display: none;
+                      }
+                    }
+                  }
+
+                  //Los items muestras y catálogo.
+                  li {
+                    @include display-flex;
+                    @include flex-direction-column;
+                    @include align-items(center);
+                    flex: 0 100%;
+                    border-bottom: none;
+                    padding: 0;
+
+                    a {
+                      display: block;
+                      text-align: center;
+                      text-transform: initial;
+
+                      &:first-of-type {
+                        min-height: 55px;
+                      }
+                    }
+                  }
+
+                  &::before {
+                    content: none;
+                    pointer-events: initial;
+                  }
+
+                  img {
+                    margin: 20px 0 10px;
+                  }
+
+                  .cta-granate {
+                    text-transform: initial;
+                  }
+                }
+              }
+
+              @include respond-below(md){
+                &.open {
+                  .item-blog > .sub-menu {
+                    opacity: 1;
+                    pointer-events: initial;
+                    height: auto !important;
+                    width: auto !important;
+                    min-width: $submenu-blog-min-width !important;
+                  }
+                }
+
+                &.closed{
+                  .item-blog > .sub-menu {
+                    height: 0;
+                    width: 0;
+                    opacity: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    pointer-events: none;
+                  }
+                }
+              }
+            }
+          }
+
+          // El item productos
+          .item-productos {
+            // El submenú productos
+            .sub-menu {
+              padding: $submenu-productos-padding;
+              left: $submenu-productos-left;
+
+              li {
+                text-transform: initial;
+                //font-weight: 700;
+                margin-bottom: $v-unit-l;
+                text-align: center;
+                //font-size: $fs-footer;
+
+                &:last-child {
+                  margin-bottom: none;
+                }
+              }
+            }
+          }
+
+          // El item qué es
+          .item-quees {
+            // El submenú qué es
+            .sub-menu {
+              padding: 50px;
+              left: $submenu-que-es-left;
+
+              li {
+                margin-bottom: $v-unit;
+                padding: $v-unit;
+                border-bottom: $separador-style;
+                text-transform: initial;
+                text-align: center;
+                min-width: 190px;
+                font-weight: bold;
+
+                &:last-child {
+                  margin-bottom: none;
+                  border-bottom: none;
+                }
+              }
+            }
+          }
+        }
+
+        #menu-menu-superior {
+          > li {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: $fs-standard;
+          }
+        }
+
+        .e-menu.--redesheadermobile,
+        .clip-inferior {
+          display: none;
+        }
+      }
+
+      @include respond-below(md) {
+        height: 90vh;
+        @include display-flex;
+        @include justify-content(space-between);
+        @include flex-direction-column;
+
+        #menu-menu-superior {
+          @include flex(0, 0, 40%);
+          @include display-flex;
+          @include flex-direction-column;
+          margin-top: 90px;
+
+          & > li {
+            //@include flex(0, 0, 25%);
+            @include display-flex;
+            @include justify-content(center);
+            @include flex-direction-column;
+
+            & > a {
+              display: block;
+              padding: $v-unit-m;
+              position: relative;
+              text-align: center;
+              font-size: 30px;
+
+              &::after {
+                content: "";
+                width: 70%;
+                height: 3px;
+                background-color: $golden;
+                display: block;
+                border-radius: 3px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+              }
+            }
+
+            &:last-child {
+              & > a {
+                &::after {
+                  content: none;
+                }
+              }
+            }
+
+            & > .sub-menu {
+              transition: $transition;
+              background-color: $white;
+              border-radius: $br-big;
+              @include flex-direction-column;
+              @include justify-content(center);
+              @include align-items(center);
+              position: relative;
+              height: 0;
+              padding: 0;
+              overflow: hidden;
+
+              &.open {
+                padding: 40px !important;
+                height: auto !important;
+                overflow: inherit;
+                transform: translateY(-4px) !important;
+                opacity: 100%;
+
+                &:before {
+                  content: "";
+                  display: block;
+                  width: 7px;
+                  height: 7px;
+                  border: 15px solid $white;
+                  border-bottom-color: transparent;
+                  border-left-color: transparent;
+                  border-radius: 3px;
+                  transform: rotate(-45deg);
+                  position: absolute;
+                  top: -10px;
+                  left: 0;
+                  right: 0;
+                  margin: auto;
+                }
+              }
+
+              &.closed{
+                height: 0;
+                width: 0;
+                opacity: 0;
+                padding: 0;
+                overflow: hidden;
+                pointer-events: none;
+              }
+
+              li {
+                font-size: $fs-medium;
+                text-align: center;
+                font-family: $ff-main;
+                font-weight: $fw-bold;
+
+                a {
+                  display: block;
+                  padding: $v-unit-s;
+                }
+              }
+
+              .item-catalogos,
+              .item-prueba {
+                a {
+                  &:nth-child(2),
+                  &:nth-child(3) {
+                    display: none;
+                  }
+                }
+              }
+
+              &:before {
+                content: "";
+                display: block;
+                width: 7px;
+                height: 7px;
+                border: 15px solid $white;
+                border-bottom-color: transparent;
+                border-left-color: transparent;
+                border-radius: 3px;
+                transform: rotate(-45deg);
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+
+                @include respond-above(md) {
+                  top: -70px;
+                }
+                @include respond-below(md) {
+                  top: -5px;
+                }
+              }
+            }
+          }
+        }
+
+        .--redesheadermobile {
+          @include flex(0, 0, 30%);
+          @include display-flex;
+          @include justify-content(center);
+          @include align-items(center);
+          margin: 0 -20px;
+          padding-top: $v-unit-l;
+          position: relative;
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 300;
+            width: 100%;
+            height: 180px;
+            background-image: url(#{$img-backgrounds}/elipse.svg);
+            background-repeat: no-repeat;
+            background-position: top;
+            overflow: hidden;
+          }
+
+          li {
+            position: relative;
+            z-index: 350;
+            margin: $v-unit-l;
+
+            a i {
+              font-size: $fs-icons-mobile;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,352 @@
+//
+// Vars
+//
+$submenu-productos-left: -140%;
+$submenu-productos-padding: 100px 80px;
+$submenu-servicios-left: -450%;
+$submenu-servicios-padding: 50px 450px 130px 60px;
+$submenu-que-es-left: -300%;
+$submenu-que-es-padding: 50px;
+$submenu-blog-left: 100px;
+$submenu-blog-padding: 0;
+$submenu-blog-min-width: 415px;
+$separador-style: 4px solid $golden;
+//
+// Styles
+//
+
+header {
+  .e-menu {
+    &.--redes {
+      @include display-flex;
+
+      ul {
+        @include display-flex;
+
+        li {
+          margin: 0 $h-unit-xs;
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    &.--top {
+      @include display-flex;
+      @include justify-content(center);
+      @include align-items(flex-start);
+
+      ul {
+        @include display-flex;
+        @include justify-content(center);
+        @include align-items(flex-start);
+
+        &.menu > li {
+          margin: 0 $h-unit-m;
+          padding: $v-unit-m 0;
+          position: relative;
+        }
+
+        // Todos los submenús
+        .sub-menu {
+          opacity: 0;
+          pointer-events: none;
+          transition: $transition;
+          background-color: $white;
+          position: absolute;
+          z-index: 10;
+          top: $v-unit-xl;
+          border-radius: $br-big;
+          @include display-flex;
+          @include flex-direction-column;
+          @include justify-content(center);
+          @include align-items(flex-start);
+
+          li {
+            font-size: 23px;
+          }
+
+          &:before {
+            content: "";
+            display: block;
+            width: 7px;
+            height: 7px;
+            border: 15px solid $white;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            border-radius: 3px;
+            transform: rotate(-45deg);
+            position: absolute;
+            top: -10px;
+            left: 0;
+            right: 0;
+            margin: auto;
+          }
+        }
+
+        // El item servicios
+        .menu-item-63 {
+          // El submenú servicios
+          & > .sub-menu {
+            left: $submenu-servicios-left;
+            padding: $submenu-servicios-padding;
+            display: flex;
+            align-items: stretch;
+
+            &:before {
+              left: 0;
+              right: 0;
+              margin: auto;
+            }
+
+            li {
+              padding: $v-unit-s;
+              padding-left: 0;
+              border-bottom: $separador-style;
+
+              &:last-child {
+                border-bottom: none;
+              }
+            }
+
+            // El item blog, al que sub añadimos muestras y catálogo.
+            .menu-item-90 {
+              position: relative;
+
+              // El submenú blog, que contiene muestras y catálogo.
+              .sub-menu {
+                @include flex-direction-row;
+                @include align-items(flex-start);
+                min-width: $submenu-blog-min-width;
+                padding: $submenu-blog-padding;
+                left: $submenu-blog-left;
+                position: absolute;
+                top: 0;
+                background: none;
+
+                //El subitem catálogos, que tiene el enlace bajo la imagen oculto.
+                .menu-item-64 {
+                  a {
+                    &:last-child {
+                      display: none;
+                    }
+                  }
+                }
+
+                //Los items muestras y catálogo.
+                li {
+                  @include display-flex;
+                  @include flex-direction-column;
+                  @include align-items(center);
+                  flex: 0 100%;
+                  border-bottom: none;
+                  padding: 0;
+
+                  a {
+                    display: block;
+                    text-align: center;
+                    text-transform: initial;
+
+                    &:first-of-type {
+                      min-height: 55px;
+                    }
+                  }
+                }
+
+                &::before {
+                  content: none;
+                  pointer-events: initial;
+                }
+
+                img {
+                  margin: 20px 0 10px;
+                }
+
+                .cta-granate {
+                  text-transform: initial;
+                }
+              }
+            }
+          }
+        }
+
+        // El item productos
+        .menu-item-58 {
+          // El submenú productos
+          .sub-menu {
+            padding: $submenu-productos-padding;
+            left: $submenu-productos-left;
+
+            li {
+              text-transform: initial;
+              font-weight: initial;
+              margin-bottom: $v-unit-l;
+              text-align: center;
+              font-size: $fs-footer;
+
+              &:last-child {
+                margin-bottom: none;
+              }
+            }
+          }
+        }
+
+        // El item qué es
+        .menu-item-60 {
+          // El submenú qué es
+          .sub-menu {
+            padding: 50px;
+            left: $submenu-que-es-left;
+
+            li {
+              margin-bottom: $v-unit;
+              padding: $v-unit;
+              border-bottom: $separador-style;
+              text-transform: initial;
+              text-align: center;
+              min-width: 190px;
+              font-weight: bold;
+
+              &:last-child {
+                margin-bottom: none;
+                border-bottom: none;
+              }
+            }
+          }
+        }
+
+        .menu-item-has-children {
+          &:hover {
+            .sub-menu {
+              opacity: 100%;
+              pointer-events: initial;
+            }
+          }
+        }
+      }
+    }
+
+    @include respond-above(md) {
+      &.--top {
+        #menu-menu-superior {
+          > li {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: $fs-standard;
+          }
+        }
+      }
+    }
+
+    @include respond-below(md) {
+    }
+
+    @include respond-below(sm) {
+    }
+  }
+}
+
+footer {
+  .e-menu {
+    &.--top {
+      @include display-flex;
+      @include justify-content(space-between);
+      @include align-items(stretch);
+      flex-wrap: wrap;
+
+      & > li {
+        margin-bottom: $v-unit-l;
+        position: relative;
+
+        &.menu-item-58,
+        &.menu-item-63 {
+          &::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            border-radius: 3px;
+            background-color: $golden;
+            position: absolute;
+            bottom: 0;
+          }
+        }
+
+        & > a {
+          display: block;
+          text-transform: uppercase;
+          font-weight: bold;
+          margin-bottom: $v-unit-l;
+          font-size: $fs-large;
+        }
+
+        & > .sub-menu {
+          * {
+            font-size: $fs-footer;
+          }
+
+          & > li {
+            margin-bottom: $v-unit-m;
+          }
+
+          .sub-menu {
+            li {
+              margin-top: $v-unit-m;
+            }
+          }
+        }
+
+        img,
+        .cta {
+          display: none;
+        }
+
+        @include respond-above(md) {
+          @include flex(0, 0, 35%);
+
+          &:nth-of-type(2),
+          &:nth-of-type(4) {
+            * {
+              text-align: right;
+            }
+
+            &::after {
+              right: 0;
+            }
+          }
+        }
+        @include respond-below(md) {
+          @include flex(0, 0, 100%);
+
+          * {
+            text-align: center;
+          }
+
+          &::after {
+            right: 0;
+            left: 0;
+            margin: auto;
+          }
+        }
+      }
+    }
+    &.--redes.--footer {
+      li {
+        display: inline-block;
+        margin: 0 $v-unit-m;
+
+        i {
+          font-size: 40px;
+        }
+      }
+    }
+
+    &.--legal {
+      @include display-flex;
+      @include justify-content(space-between);
+      @include align-items(center);
+    }
+  }
+}

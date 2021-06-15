@@ -1,0 +1,89 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.c-content {
+  // .blog &,
+  .archive &,
+  .category & {
+    @include respond-above(md) {
+      @include flex(0, 0, 65%);
+
+      .e-subtitle-2 {
+        margin-bottom: $v-unit-l;
+      }
+
+      margin-bottom: $v-unit-l;
+    }
+  }
+
+  .page-template-page-cursos &,
+  .blog &,
+  .archive & {
+    @include respond-above(sm) {
+      @include flex(0, 0, 75%);
+    }
+  }
+
+  &.--course,
+  &.page-content .taxonomias .b-work__card,
+  &.c-entries,
+  &.c-entries {
+    @include display-flex;
+    @include flex-wrap(wrap);
+    @include align-items(flex-start);
+    @include justify-content(space-between);
+
+    .b-card {
+      margin-bottom: $v-unit-l;
+    }
+
+    .blog & {
+      @include respond-below(sm) {
+        @include justify-content(center);
+        .--blog {
+          margin-right: 20%;
+          margin-left: 20%;
+        }
+      }
+    }
+
+    &.results__category {
+      @include flex(0, 0, 72%);
+      @include justify-content(space-between);
+
+      @include respond-between(sm, md) {
+        @include flex(0, 0, 75%);
+        @include justify-content(space-between);
+      }
+
+      @include respond-below(sm) {
+        @include flex(0, 0, 100%);
+        @include justify-content(center);
+      }
+    }
+
+    .b-pager {
+      @include flex(0, 0, 100%);
+    }
+  }
+
+  .post-template-default & {
+    @include respond-above(md) {
+      padding: 0 10%;
+    }
+    @include respond-between(sm, md) {
+      padding: 0 5% 0 0;
+    }
+    @include respond-above(sm) {
+      @include flex(0, 0, 77%);
+    }
+    @include respond-below(sm) {
+      @include flex(0, 0, 100%);
+    }
+  }
+}

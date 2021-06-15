@@ -1,0 +1,50 @@
+//
+// Vars
+//
+$catorce: 14px;
+$doce: 12px;
+$seis: 6px;
+$cuatro: 4px;
+$dos: 2px;
+//
+// Styles
+//
+
+.e-burger {
+  position: relative;
+  z-index: 100;
+  transform: rotate(0deg);
+  transition: $transition;
+  width: $h-unit-m;
+  height: $catorce;
+  cursor: pointer;
+  &:hover{
+    .palo{
+      background-color: $new;
+    }
+  }
+
+  .palo {
+    background-color: black;
+    height: $dos;
+    width: $h-unit-m;
+    border-radius: $dos;
+    opacity:1;
+    margin-bottom: $cuatro;
+    transition: transform 0.3s linear, opacity 0.3s linear, background-color 0.3s linear,top 0.3s linear;
+    position: absolute;
+    &.--uno{top:0}
+    &.--dos{top:$seis}
+    &.--tres{top:$doce}
+
+  }
+
+  @include respond-above(md) {
+    display: none;
+  }
+  @include respond-below(md) {
+    position: absolute;
+    left: $h-unit;
+    top: $v-unit-l;
+  }
+}

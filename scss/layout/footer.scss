@@ -1,0 +1,67 @@
+//
+// Vars
+//
+$noventa:90px;
+//
+// Styles
+//
+
+.c-footer {
+  padding-top: 50px;
+  background: $beige-footer;
+  position: relative;
+  z-index: 1000;
+
+  .e-curva {
+    display: block;
+    height: 100px;
+    position: absolute;
+    z-index: 900;
+    top: -50px;
+    left: 0;
+    right: 0;
+    background-image: url(#{$img-backgrounds}/fondo-footer.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    @include respond-above(tb){
+      top: -$noventa;
+    }
+  }
+
+  * {
+    line-height: $lh-standard;
+  }
+
+  .cosa {
+    max-width: 330px;
+    margin: 0 auto;
+    @include display-flex;
+    @include justify-content(center);
+    @include align-items(center);
+    @include flex-direction-column;
+
+    .e-logo {
+      display: block;
+      margin-bottom: $v-unit-xl;
+
+      img {
+        width: 325px;
+        height: 125px;
+      }
+    }
+
+    @include respond-above(md) {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin-bottom: $v-unit-xl;
+    }
+
+    @include respond-below(md) {
+      margin-bottom: $v-unit-xl;
+    }
+  }
+}

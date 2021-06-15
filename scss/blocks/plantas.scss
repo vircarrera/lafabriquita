@@ -1,0 +1,212 @@
+$seiscientosveinte: 620px;
+$quinientosveinte: 520px;
+$quinientos: 500px;
+$cuatrocientosveinte: 420px;
+$cuatrocientos: 400px;
+$doscientostreintaycinco: 235px;
+$trescientosveintiseis: 326px;
+$doscientostreinta: 230px;
+$doscientoscincuenta: 250px;
+$cientocincuenta: 150px;
+
+.b-plantas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  &.out {
+    @include respond-above(md) {
+      height: $quinientosveinte;
+      top: -82%;
+    }
+    @include respond-between(sm, md) {
+      height: $quinientosveinte;
+      top: -168%;
+    }
+    @include respond-between(xxs, sm) {
+      height: $doscientostreintaycinco;
+      top: -82%;
+    }
+    @include respond-below(xxs) {
+      top: -56%;
+      width: 90%;
+    }
+  }
+  .e-planta {
+    position: absolute;
+    overflow: hidden;
+    img {
+      object-fit: contain;
+      @include respond-above(xl) {
+        width: $seiscientosveinte;
+        height: $quinientos;
+      }
+      @include respond-between(sm, xl) {
+        width: $cuatrocientosveinte;
+        height: $cuatrocientos;
+      }
+      @include respond-between(xxs, sm) {
+        width: $doscientoscincuenta;
+        height: $trescientosveintiseis;
+      }
+      @include respond-below(xxs) {
+        width: $cientocincuenta;
+        height: $doscientostreinta;
+      }
+    }
+    &.--uno {
+      transform: rotate(180deg);
+      @include respond-above(md) {
+        top: -29%;
+        left: -11%;
+      }
+      @include respond-between(sm, md) {
+        top: -20%;
+        left: -24%;
+      }
+      @include respond-below(sm) {
+        top: -24%;
+        left: -22%;
+      }
+    }
+    &.--dos {
+      transform: scaleY(-1);
+      @include respond-above(md) {
+        top: -29%;
+        right: -11%;
+      }
+      @include respond-between(sm, md) {
+        top: -20%;
+        right: -24%;
+      }
+      @include respond-below(sm) {
+        top: -24%;
+        right: -22%;
+      }
+    }
+    &.--tres {
+      transform: scaleX(-1);
+      z-index: 20;
+      @include respond-above(md) {
+        left: -8%;
+      }
+      @include respond-between(sm, md) {
+        left: -24%;
+      }
+      @include respond-below(sm) {
+        left: -32%;
+      }
+    }
+    &.--cuatro {
+      z-index: 20;
+      @include respond-above(md) {
+        top: 0%;
+        right: -17%;
+      }
+      @include respond-between(sm, md) {
+        right: -24%;
+      }
+      @include respond-below(sm) {
+        top: 0%;
+        right: -32%;
+      }
+    }
+  }
+}
+
+.home{
+  .e-planta{
+      img {
+      object-fit: contain;
+      @include respond-above(sm) {
+        width: $cuatrocientosveinte;
+        height: $cuatrocientos;
+      }
+      @include respond-between(xxs, sm) {
+        width: $doscientoscincuenta;
+        height: $trescientosveintiseis;
+      }
+      @include respond-below(xxs) {
+        width: $cientocincuenta;
+        height: $doscientostreinta;
+      }
+    }
+    &.--uno{
+      @include respond-above(lg) {
+        top: -19%;
+        left: -7%;
+      }
+      @include respond-between(tb,lg) {
+        top: -19%;
+        left: -14%;
+      }
+      @include respond-between(xxs,tb) {
+        top: -19%;
+        left: -18%;
+      }
+      @include respond-below(xxs) {
+        top: -12%;
+        left: -14%;    
+      }
+    }
+    &.--dos{
+
+      @include respond-above(lg) {
+        top: -21%;
+        right: -7%;
+      }
+      @include respond-between(tb,lg) {
+        top: -21%;
+        right: -14%;
+      }
+      @include respond-between(xxs,tb) {
+        top: -21%;
+        right: -18%;
+      }
+      @include respond-below(xxs) {
+        top: -15%;
+        right: -14%;    
+      }
+    }
+    &.--tres{
+
+      @include respond-above(lg) {
+        top: 28%;
+        left: -7%;
+      }
+      @include respond-between(tb,lg) {
+        top: 28%;
+        left: -14%;
+      }
+      @include respond-between(xxs,tb) {
+        top: 28%;
+        left: -18%;
+      }
+      @include respond-below(xxs) {
+        top: 28%;
+        left: -14%;    
+      }
+      
+    }
+    &.--cuatro{
+      z-index:-1000;
+      @include respond-above(lg) {
+        top: 32%;
+        right: -7%;
+      }
+      @include respond-between(tb,lg) {
+        top: 32%;
+        right: -14%;
+      }
+      @include respond-between(xxs,tb) {
+        top: 32%;
+        right: -18%;
+      }
+      @include respond-below(xxs) {
+        top: 32%;
+        right: -14%;    
+      }
+      
+    }
+  }
+
+}

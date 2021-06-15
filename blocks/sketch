@@ -1,0 +1,49 @@
+<section class="c-home-blog-noticias">
+    <?php
+        //título
+        $titulobannernoticia = get_field('titulo_banner_noticias');
+        $titulobannerblog = get_field('titulo_banner_blog');
+        //imagen
+        $imagennoticia = get_field('imagen_banner_noticias');
+        $imagenblog = get_field('imagen_banner_blog');
+        $urlnoticia = $imagennoticia['url'];
+        $titlenoticia = $imagennoticia['title'];
+        $altnoticia = $imagennoticia['alt'];
+        $urlblog = $imagenblog['url'];
+        $titleblog = $imagenblog['title'];
+        $altblog = $imagenblog['alt'];
+        // Thumbnail size attributes.
+        $size = 'medium';
+        $thumbnoticia = $imagennoticia['sizes'][ $size ];
+        $thumbblog = $imagenblog['sizes'][ $size ];
+        $thumbnoticias = $imagennoticia['sizes'][ $size ];
+        $thumbblog = $imagenblog['sizes'][ $size ];
+        //descripción
+        $descripcionbannernoticia = get_field('descripcion_banner_noticias');
+        $descripcionbannerblog = get_field('descripcion_banner_blog');
+        //link attributes
+        $linknoticia = get_field('link_a_banner_noticias');
+        $linkblog = get_field('link_a_banner_blog');
+        $linkurlnoticia = $linknoticia['url'];
+        $linkurlblog = $linkblog['url'];
+        $linktitlenoticia = $linknoticia['title'];
+        $linktitleblog = $linkblog['title'];
+    ?>
+    <div>
+        <h4><?php echo $titulobannernoticia; ?></h4>
+        <figure>
+            <img src="<?php echo esc_url($thumbnoticia); ?>" alt="<?php echo esc_attr($altnoticia); ?>" title="<?php echo esc_attr($titlenoticia);?>">
+        </figure>
+        <p><?php echo $descripcionbannernoticia; ?></p>
+        <a href="<?php echo esc_url( $linkurlnoticia ); ?>"><?php echo esc_html( $linktitlenoticia ); ?></a>
+    </div>
+    <div>
+        <h4><?php echo $titulobannerblog; ?></h4>
+        <figure>
+            <img src="<?php echo esc_url($thumbblog); ?>" alt="<?php echo esc_attr($altblog); ?>" title="<?php echo esc_attr($titleblog);?>">
+        </figure>
+        <p><?php echo $descripcionbannerblog; ?></p>
+        <a href="<?php echo esc_url( $linkurlblog ); ?>"><?php echo esc_html( $linktitleblog ); ?></a>
+    </div>
+
+</section>

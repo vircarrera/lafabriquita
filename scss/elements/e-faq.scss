@@ -1,0 +1,50 @@
+.e-faq {
+  margin-bottom: $v-unit-l;
+  transition: all 0.3s linear;
+  &[open]{
+    .e-pregunta{
+      color: $new;
+    }
+  }
+  .e-pregunta {
+    cursor: pointer;
+    font-size: $fs-footer;
+    text-decoration: underline;
+    font-weight: $fw-bold;
+    font-family: $ff-main;
+    transition: color 0.3s linear;
+
+    &:hover {
+      color: $new;
+    }
+  }
+
+  summary::marker {
+    content: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .e-respuesta {
+    font-size: $fs-standard;
+    transition: max-height 0.5s ease-out;
+    // max-height: 0;
+    overflow: hidden;
+  }
+
+  .wrapper {
+    width: 100%;
+    @include display-flex;
+
+    @include respond-above(md) {
+      @include justify-content(flex-end);
+      padding-right: $h-unit-l;
+    }
+
+    @include respond-below(md) {
+      @include justify-content(center);
+    }
+  }
+}

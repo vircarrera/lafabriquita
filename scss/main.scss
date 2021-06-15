@@ -1,0 +1,83 @@
+// //
+// // Vendor
+// //
+@import "vendor/reset";
+// // @import "vendor/flickity";
+
+// Config
+@import "config/mixins";
+@import "config/mixins-flex";
+@import "config/mixins-transform";
+@import "config/breakpoints";
+@import "config/basic";
+
+// // Elements
+
+@import "elements/burger";
+@import "elements/check";
+@import "elements/cta";
+@import "elements/granja";
+// @import "elements/logo";
+@import "elements/menu-footer";
+@import "elements/menu-header";
+// @import "elements/pagination";
+@import "elements/pagedots";
+@import "elements/search";
+@import "elements/tags";
+@import "elements/titles";
+@import "elements/clip-path";
+@import "elements/e-faq";
+// @import "elements/video";
+
+// // Blocks
+
+@import "blocks/calidad-contenido";
+@import "blocks/calidad-intro";
+@import "blocks/card-familia";
+@import "blocks/catalogo";
+@import "blocks/contacto-datos";
+@import "blocks/entrada";
+@import "blocks/entradas";
+@import "blocks/familia-intro";
+@import "blocks/familia-productos-relacionados";
+@import "blocks/familia-productos";
+@import "blocks/familia-aplicaciones";
+@import "blocks/featured";
+@import "blocks/legal";
+@import "blocks/universo-artesanal";
+@import "blocks/universo-conclusion";
+@import "blocks/universo-intro";
+@import "blocks/plantas";
+@import "blocks/producto";
+
+@import "blocks/home-featured";
+@import "blocks/home-separador";
+@import "blocks/home-productos";
+@import "blocks/home-sliderII";
+@import "blocks/home-calidad";
+@import "blocks/home-accesos-directos";
+
+@import "blocks/single-cpt-contenido";
+@import "blocks/single-cpt-aside-i";
+@import "blocks/single-cpt-aside-d";
+
+// // // Layout
+
+@import "layout/aside";
+// @import "layout/content";
+@import "layout/footer";
+@import "layout/form";
+@import "layout/header";
+@import "layout/layout";
+// @import "layout/nav";
+
+// //  // Partials
+@import "partials/calidad";
+@import "partials/familia";
+@import "partials/productos";
+@import "partials/home";
+@import "partials/entrada-cpt";
+@import "partials/producto";
+@import "partials/resultados-search";
+@import "partials/tags";
+@import "partials/faq";

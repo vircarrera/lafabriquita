@@ -1,0 +1,50 @@
+$seiscientossesentaytres: 663px;
+$cientonoventaycinco: 195px;
+$veinticinco: 25px;
+$tres: 3px;
+
+.blog-template-default,
+.noticias-template-default {
+    .--dcha{
+        max-width: $seiscientossesentaytres;
+        margin: 0 auto;
+        display: block;
+        .titulo{
+            font-size: $fs-medium;
+            line-height: $lh-standard;
+            text-transform: uppercase;
+            @include respond-below(md){
+                text-align: center;
+            }
+        }
+        .border{
+            width: $cientonoventaycinco;
+            height: $tres;
+            background-color: $granate;
+            @include respond-above(md){
+                margin: $veinticinco 0;
+            }
+            @include respond-below(md){
+                margin:0 auto;
+                margin-top: $veinticinco;
+                margin-bottom: $veinticinco;
+            }
+        }
+        a{
+            font-family: $ff-main;
+            font-weight: $fw-bold;
+            line-height: $lh-normal;
+            display: block;
+            margin-bottom: $v-unit-m;
+            font-size: $fs-medium;
+            transition: color 0.3s linear;
+            &:hover{
+                color: $new;
+            }
+        }
+        @include respond-below(md){
+            padding-left: $h-unit;
+            padding-right: $h-unit;
+        }
+    }
+}

@@ -1,0 +1,212 @@
+//
+// Vars
+//
+$franja-crema-top-lg: 80px;
+$franja-crema-height-lg: 150px;
+$franja-crema-top-sm-md: 60px;
+$franja-crema-top-sm: 115px;
+$franja-crema-height-sm: 117px;
+//altura de la imagen que "titula" la diapositiva
+$title-height: 160px;
+//z-index
+$z-index-container-madera: 200;
+$z-index-container-scroll: 250;
+
+$doscientosochentaycuatro: 284px;
+$cuatrocientoscuarentaycuatro:444px;
+//
+// Styles
+//
+
+.c-home-sliderII {
+  background-color: $beige-general;
+  text-align: center;
+
+  @include respond-above(md) {
+    padding-top: 80px;
+  }
+  @include respond-below(md) {
+    padding-top: $v-unit-m;
+  }
+
+  //este contiene la madera
+  & > .container {
+    position: relative;
+    z-index: $z-index-container-madera;
+
+    &.wood {
+      background: url("img/backgrounds/tablamadera.png") no-repeat bottom;
+      background-size: $unit100p 40%;
+    }
+
+    .h3 {
+      &.big {
+        &.responsive {
+          font-family: $ff-secondary;
+          line-height: $lh-normal;
+          font-weight: $fw-bold;
+          text-transform: none;
+
+          strong {
+            font-weight: bolder;
+          }
+
+          @include respond-above(md) {
+            font-size: $fs-heroe;
+            margin-bottom: 35px;
+          }
+
+          @include respond-below(md) {
+            font-size: $fs-treinti;
+            margin-bottom: $v-unit-m;
+          }
+        }
+      }
+    }
+
+    //este contiene las diapositivas y lleva el flickity
+    .contenedor-scroll {
+      position: relative;
+      z-index: $z-index-container-scroll;
+      padding-bottom: $v-unit-l;
+
+      .b-diapositiva {
+        display: block;
+        width: $unit100p;
+
+        .container {
+          position: relative;
+        }
+
+        .new {
+          position: absolute;
+          top: 250px;
+          left: 8%;
+          width: 95px;
+          height: 95px;
+          border-radius: 100%;
+          background-color: $new;
+          color: $white;
+          font-size: 20px;
+          font-family: $ff-secondary;
+          font-weight: 800;
+          transform: rotate(-10deg);
+          text-transform: uppercase;
+          @include align-items(center);
+          @include justify-content(center);
+          @include respond-below(md) {
+            top: 300px;
+            width: 65px;
+            height: 65px;
+            font-size: 16px;
+            left: 15%;
+          }
+        }
+
+        .title,
+        .tarta {
+          display: block;
+
+          img {
+            display: block;
+            margin: 0 auto;
+          }
+        }
+
+        .title {
+          height: $title-height;
+          margin-bottom: $v-unit-l;
+          @include display-flex();
+          @include align-items(center);
+          @include justify-content(center);
+          position: relative; /*tocado*/
+        }
+
+        .tarta {
+          @include respond-below(sm){
+            min-height: $doscientosochentaycuatro;
+          }
+          @include respond-above(sm){
+            min-height: $cuatrocientoscuarentaycuatro;
+          }
+        }
+        
+        .fondo {
+          background-color: $beige-franjas2; /*tocado*/
+          // background-size: 120%; /*tocado*/
+          width: 150%;
+          height: 100%;
+          position: absolute;
+          z-index: -200;
+          @include respond-above(lg) {
+            width: 200%;
+          }
+        }
+
+        .e-description {
+          min-height: 70px;
+          max-width: 800px;
+          margin: 0 auto;
+
+          @include respond-below(xs) {
+            min-height: 126px;
+          }
+          @include respond-below(xxs) {
+            min-height: 150px;
+          }
+        }
+      }
+
+      .flickity-button {
+        background: none;
+      }
+
+      .flickity-prev-next-button {
+        top: 14%;
+        @include respond-above(md) {
+          top: 12%;
+        }
+      }
+
+      .flickity-prev-next-button.previous,
+      .flickity-prev-next-button.next {
+        svg {
+          display: none;
+        }
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+      }
+
+      .flickity-prev-next-button.previous {
+        background-image: url(#{$img-backgrounds}/flecha-triangular-izquierda.svg);
+        @include respond-above(md) {
+          left: 10%;
+        }
+      }
+      .flickity-prev-next-button.next {
+        background-image: url(#{$img-backgrounds}/flecha-triangular-derecha.svg);
+        @include respond-above(md) {
+          right: 10%;
+        }
+      }
+    }
+  }
+
+  .closing {
+    font-family: $ff-secondary;
+    font-weight: $fw-bold;
+    text-transform: uppercase;
+    line-height: $lh-easy;
+
+    @include respond-above(md) {
+      font-size: $fs-treinti;
+      padding: 25px 0;
+    }
+
+    @include respond-below(md) {
+      font-size: $fs-standard;
+      padding: $v-unit-s 0;
+    }
+  }
+}

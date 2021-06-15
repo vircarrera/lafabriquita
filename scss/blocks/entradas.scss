@@ -1,0 +1,67 @@
+//
+// Vars
+//
+$doscientos: 200px;
+//
+// Styles
+//
+
+.c-entradas {
+  .post-type-archive-noticias &,
+  .post-type-archive-blog & {
+    padding-bottom: $doscientos;
+    background-color: $beige-general;
+    z-index: 200;
+    position: relative;
+    padding-top: $unit100;
+    .b-entradas{
+      padding-top:$v-unit-l; 
+    }
+  }
+
+  .post-type-archive-blog & {
+    & > .container {
+      @include display-flex();
+
+      .b-entradas {
+        @include display-flex();
+        @include justify-content(space-between);
+        @include flex-wrap(wrap);
+
+        @include respond-above(md) {
+          @include flex(0, 0, 75%);
+        }
+
+        @include respond-below(md) {
+          @include flex(0, 0, 100%);
+          order: 2;
+        }
+      }
+
+      @include respond-above(md) {
+        margin-top: $v-unit-xl;
+        @include flex-direction-row();
+      }
+      @include respond-below(md) {
+        @include flex-direction-column();
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  .post-type-archive-noticias & {
+    & > .container {
+      @include display-flex();
+      @include flex-direction-row();
+      @include justify-content(flex-end);
+      @include flex-wrap(wrap);
+
+      .b-entradas {
+        @include display-flex();
+        @include justify-content(space-between);
+        @include flex-wrap(wrap);
+        @include flex(0, 0, 100%);
+      }
+    }
+  }
+}

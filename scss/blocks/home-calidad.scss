@@ -1,0 +1,68 @@
+$setecientosveinte: 720px;
+$cuatrocientosnoventa: 490px;
+$trescientos: 300px;
+$cientocincuenta: 150px;
+$noventa: 90px;
+
+.home{
+    .c-home-calidad{
+        z-index: 200;
+        background-color: $beige-general;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        .b-home-calidad{
+            &.--intro{
+                background: url("img/backgrounds/FONDO\ beige\ RECICLADO.jpg");
+                background-repeat: no-repeat;
+                background-position: center;
+                // background-attachment: fixed;
+                background-size: cover;
+                padding: $unit50 0 $unit100 0;
+                position: relative;
+                .container{
+                    max-width: $setecientosveinte;
+                    margin: 0 auto;
+                    @include respond-below(md) {
+                      padding-left: $h-unit;
+                      padding-right: $h-unit;
+                    }
+                    img{
+                        margin:0 auto;
+                        margin-bottom: $v-unit-m;
+                        @include respond-above(md) {
+                            width:$cientocincuenta;
+                        }
+                        @include respond-below(md) {
+                            width:$noventa;
+                        }
+                    }
+                }
+
+            }
+            &.--enlace{
+                position: relative;
+                padding: $unit100 0 $cientocincuenta 0;
+                @include display-flex;
+                @include flex-direction-column;
+                @include align-items(center);
+                overflow: hidden;
+                .e-title-calidad {
+                    color: $golden-2;
+                    @include respond-above(md) {
+                      margin-top: $cuarentaycinco;
+                      margin-bottom: $v-unit-l;
+                      max-width: $cuatrocientosnoventa;
+                    }
+                    @include respond-below(md) {
+                      margin-top: $treintaycinco;
+                      margin-bottom: $v-unit-m;
+                      max-width: $trescientos;
+                    }
+                }
+            }
+        }
+    }
+
+
+}

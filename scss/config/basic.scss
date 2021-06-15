@@ -1,0 +1,336 @@
+/*
+	*
+	* Colours
+	*
+*/
+
+//colors
+$white: white;
+$beige-general: #fffdf8;
+$beige-footer: #fdfaf0;
+$beige-franjas: #f9f3df;
+$beige-franjas2: #efe8d5;
+$golden: #c28e5c;
+$golden-2: #917859;
+$new: #b38d5f;
+$granate: #692623;
+$black: #000000;
+$otro: #D5AF78;
+
+$gradient: linear-gradient(
+  0deg,
+  rgba(133, 96, 60, 1) 17%,
+  rgba(213, 175, 120, 1) 100%
+);
+
+// messages
+
+$success: #26c281;
+$info: #22a7f0;
+$warning: #f39c12;
+$danger: #ef4836;
+
+// text shadow
+
+$ts-grey: 1px 1px 5px #3a3a3a8a;
+
+// transitions
+
+$transition: 0.5s all;
+$ts-soft: 0.6s;
+
+// box shadow
+
+$boxshadow-suave: 3px 2px 3px rgba(0, 0, 0, 0.16); /*lafabriquita*/
+$boxshadow-vertical: 0px 3px 6px rgba(0, 0, 0, 0.16); /*lafabriquita*/
+$boxshadowcero: 0 0px 0px rgba(0, 0, 0, 0);
+$boxshadownormal: 0 4px 4px rgba(0, 0, 0, 0.2);
+$boxshadowhover: 0 4.5px 4.5px rgba(70, 70, 70, 0.4);
+$transitionshadow: all 0.3s ease-in-out;
+
+// gradients
+
+/*
+-
+Font Families
+-
+*/
+
+$ff-main: "Dosis", sans-serif;
+$ff-secondary: "Raleway", sans-serif;
+
+/*
+-
+Font Sizes
+-
+*/
+
+$fs-extra: 100px;
+$fs-superjumbo: 80px;
+$fs-jumbo: 60px;
+$fs-extrabig: 50px;
+$fs-big: 45px;
+$fs-subtitle: 40px;
+$fs-heroe: 35px;
+$fs-treinti: 30px;
+$fs-veintiocho: 28px;
+$fs-large: 25px;
+$fs-footer: 23px;
+$fs-heading: 22px;
+$fs-medium: 20px;
+$fs-standard: 18px;
+$fs-read: 16px;
+$fs-small: 14px;
+$fs-minor: 12px;
+
+$unit100p: 100%;
+$unit100: 100px;
+$unit50: 50px;
+
+$v-unit-xs: 5px;
+$unit: 7.5px;
+$v-unit-s: 10px;
+$v-unit: 15px;
+$v-unit-m: 20px;
+$v-unit-l: 30px;
+$v-unit-xl: 60px;
+$v-unit-xxl: 90px;
+$v-unit-xxxl: 120px;
+
+$h-unit-xs: 7.5px;
+$h-unit-s: 10px;
+$h-unit: 15px;
+$h-unit-m: 20px;
+$h-unit-l: 30px;
+$h-unit-xl: 60px;
+$h-unit-xxl: 90px;
+$h-unit-xxxl: 120px;
+
+$lh-extra: 2;
+$lh-big: 1.75;
+$lh-read: 1.6667;
+$lh-easy: 1.4;
+$lh-standard: 1.33333;
+$lh-normal: 1.2;
+$lh-small: 1.166667;
+$lh-reset: 1;
+$lh-zero: 0;
+
+$bs-double: 2px solid;
+
+/*
+-
+Font Weights
+-
+*/
+
+$fw-black: 800;
+$fw-bold: 700;
+$fw-semibold: 600;
+$fw-normal: 400;
+$fw-light: 300;
+$fw-lighter: 100;
+
+/*
+-
+Font Styles
+-
+*/
+
+$fs-italic: italic;
+
+/*
+-
+Border Radius
+-
+*/
+$br-peq: 10px;
+$br-thin: 15px;
+$br-big: 30px;
+$br-pildora: 50px;
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/*
+-
+Others
+-
+*/
+
+$img-bg: "img/backgrounds/";
+$img-content: "img/content/";
+$img-backgrounds: "img/backgrounds/";
+
+$border-style: 1px solid;
+$border-double: 2px solid;
+$sleeve-scale-hover: 1.01;
+
+/*
+-
+Reset
+-
+*/
+
+* {
+  box-sizing: border-box;
+  line-height: $lh-reset;
+}
+
+body {
+  font-family: $ff-main;
+  font-family: $ff-secondary;
+  font-size: $fs-small;
+  position: relative;
+  background-color: $beige-general;
+}
+
+a,
+input,
+textarea,
+button,
+button:focus,
+select {
+  border: 0;
+  outline: none !important;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+p {
+  line-height: $lh-standard;
+}
+
+a {
+  text-decoration: none;
+
+  &:link,
+  &:visited {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+em {
+  font-style: $fs-italic;
+}
+
+strong {
+  font-weight: $fw-bold;
+
+  em {
+    font-weight: $fw-bold;
+    font-style: $fs-italic;
+  }
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+  opacity: 0 !important; /* no usar display none */
+}
+
+.page-template-page-contacto .grecaptcha-badge {
+  opacity: 1 !important;
+}
+
+figcaption {
+  display: block;
+  line-height: $lh-small;
+  font-size: $fs-minor;
+  padding-top: $unit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.has-text-align-center,
+.aligncenter {
+  text-align: center;
+}
+
+.has-text-align-right,
+.alignright {
+  text-align: right;
+}
+
+.has-text-align-left,
+.alignleft {
+  text-align: left;
+}
+
+@font-face {
+  font-family: "lafabriquita-font";
+  src: url("fonts/lafabriquita-font.woff?5xzuwk") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.iconos {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "lafabriquita-font" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ico-flecha:before {
+  content: "\e906";
+  color: #fff;
+}
+.ico-youtube:before {
+  content: "\e900";
+}
+.ico-lupa:before {
+  content: "\e901";
+}
+.ico-red-mundial:before {
+  content: "\e902";
+}
+.ico-muneco:before {
+  content: "\e903";
+}
+.ico-instagram:before {
+  content: "\e904";
+}
+.ico-facebook:before {
+  content: "\e905";
+}

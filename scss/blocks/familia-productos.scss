@@ -1,0 +1,56 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.c-productos {
+  position: relative;
+
+  & > .background {
+    background: $beige-franjas;
+  }
+
+  .container {
+    @include display-flex();
+    @include justify-content(space-between);
+    @include align-items(strech);
+    flex-wrap: wrap;
+  }
+
+  .h2 {
+    margin: $v-unit-xl auto;
+    text-align: center;
+    padding-bottom: $v-unit-xxl;
+  }
+
+  .background {
+    padding: $v-unit-xxl 0;
+  }
+
+  .clip-inferior {
+    &.familia {
+      overflow: visible;
+      bottom: auto;
+
+      @include respond-below(md) {
+        path {
+          fill: $beige-franjas !important;
+        }
+      }
+    }
+  }
+
+  @include respond-below(md) {
+    .h2 {
+      margin: $v-unit-l auto $v-unit-xxl;
+      font-size: $fs-footer;
+    }
+
+    .container.w-940 {
+      padding: 0 $v-unit-l;
+    }
+  }
+}

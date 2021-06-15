@@ -1,0 +1,35 @@
+$doscientos: 200px;
+$seiscientos: 600px;
+
+.page-template-page-universo {
+  .c-conclusion {
+    background-color: $granate;
+    @include flex-center;
+    .container {
+      max-width: $seiscientos;
+      padding: $v-unit-xl $h-unit 0 $h-unit;
+      @include respond-above(md) {
+        padding-bottom: $v-unit-xxxl;
+      }
+      @include respond-below(md) {
+        padding-bottom: $doscientos;
+      }
+      @include flex-center;
+      @include flex-direction-column;
+      figure {
+        margin-bottom: $v-unit-l;
+      }
+      p {
+        color: $white;
+        text-align: center;
+        font-weight: $fw-bold;
+        @include respond-above(md) {
+          font-size: $fs-heroe;
+        }
+        @include respond-below(md) {
+          font-size: $fs-treinti;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.b-catalogo {
+  padding-top: $v-unit-xl;
+  padding-bottom: $v-unit-xxl;
+
+  .container.flex {
+    @include display-flex();
+    @include justify-content(center);
+    @include align-items(center);
+    padding-bottom: $v-unit-xl;
+
+    @include respond-above(xs) {
+      @include flex-direction-row();
+    }
+
+    @include respond-below(xs) {
+      @include flex-direction-column();
+    }
+
+    .card.--catalogo {
+      margin: $v-unit-m;
+      max-width: 200px;
+      border-radius: 25px;
+      overflow: hidden;
+      position: relative;
+
+      .title {
+        background-color: $beige-franjas2;
+        text-align: center;
+        text-transform: uppercase;
+        padding: $v-unit-s;
+        font-family: $ff-main;
+      }
+
+      figure {
+        img {
+          min-width: 100%;
+        }
+      }
+    }
+
+    .e-checkcardcatalogo {
+      position: absolute;
+      display: block;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  .container.relative {
+    position: relative;
+    min-height: 0;
+    transition: $transition;
+
+    .e-catalogo.uno {
+      z-index: 5;
+    }
+
+    .e-catalogo.dos {
+      z-index: 4;
+    }
+
+    .e-catalogo.uno,
+    .e-catalogo.dos {
+      position: absolute;
+      top: 0;
+      right: $v-unit-m;
+      left: $v-unit-m;
+      bottom: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  .e-inputcardcatalogo {
+    position: absolute;
+    opacity: 0;
+  }
+
+  #checkcardcatalogo1:checked {
+    & ~ .container {
+      .e-catalogo.uno {
+        opacity: 100%;
+        pointer-events: initial;
+      }
+
+      .e-catalogo.dos {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .card.--catalogo.uno {
+        .title {
+          background-color: $golden;
+        }
+      }
+
+      &.relative {
+        min-height: 100vh;
+      }
+    }
+  }
+
+  #checkcardcatalogo2:checked {
+    & ~ .container {
+      .e-catalogo.uno {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .e-catalogo.dos {
+        opacity: 100%;
+        pointer-events: initial;
+      }
+
+      .card.--catalogo.dos {
+        .title {
+          background-color: $golden;
+        }
+      }
+
+      &.relative {
+        min-height: 100vh;
+      }
+    }
+  }
+}

@@ -1,0 +1,135 @@
+// VARS
+$width: 360px;
+$height: 253px;
+$widthS: 315px;
+$heightS: 221px;
+
+// STYLES
+
+.b-card {
+  &.--familia {
+    .blog & {
+      margin-bottom: $v-unit-m;
+      padding-left: 0 !important;
+
+      @include respond-above(lg) {
+        margin-left: $v-unit-m;
+        margin-right: $v-unit-m;
+      }
+
+      @include respond-below(lg) {
+        margin-left: $v-unit-l;
+        margin-right: $v-unit-l;
+      }
+    }
+
+    .home &,
+    .page-template-page-familia & {
+      @include respond-above(md) {
+        margin: $v-unit-m;
+      }
+
+      @include respond-between(sm, md) {
+        width: 40%;
+        padding-left: $v-unit-l;
+        margin-right: $v-unit-l;
+      }
+
+      @include respond-between(xs, sm) {
+        width: 45%;
+        padding-left: 20px;
+      }
+
+      @include respond-below(xs) {
+        width: 90%;
+        padding-left: 20px;
+      }
+    }
+
+    picture {
+      width: $width;
+      height: $height;
+      border-radius: $br-thin;
+      @include flex-center;
+      overflow: hidden;
+
+      .blog & {
+        @include respond-above(md) {
+          width: $width;
+          height: $height;
+        }
+        @include respond-below(md) {
+          width: $widthS;
+          height: $heightS;
+        }
+      }
+
+      .home &,
+      .page-template-page-familia & {
+        @include respond-above(md) {
+          width: $width;
+          height: $height;
+        }
+
+        @include respond-below(md) {
+          height: $heightS;
+        }
+
+        @include respond-between(sm, md) {
+          width: $widthS;
+        }
+
+        @include respond-between(xs, sm) {
+          width: $widthS;
+        }
+
+        @include respond-below(sm) {
+          width: 100%;
+        }
+      }
+
+      img {
+        object-fit: cover;
+        min-height: 100%;
+      }
+    }
+
+    .e-featured {
+      position: relative;
+
+      .e-background {
+        // opacity: 50%;
+
+        .page-template-page-familia & {
+          width: 100%;
+        }
+      }
+
+      .e-lettering {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        opacity: 100%;
+      }
+    }
+
+    .h3 {
+      text-align: center;
+      margin-top: $v-unit-m;
+    }
+
+    a {
+      .h3 {
+        transition: color 0.3s linear;
+      }
+      &:hover {
+        .h3 {
+          color: $new;
+        }
+      }
+    }
+  }
+}

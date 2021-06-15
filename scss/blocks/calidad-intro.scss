@@ -1,0 +1,41 @@
+//
+// Vars
+//
+
+$seventy: 70px;
+$cientotreinta: 130px;
+
+//
+// Styles
+//
+
+.page-template-page-calidad {
+  .c-intro {
+    text-align: center;
+    position: relative;
+    padding-top: $seventy;
+    p {
+      margin: 0;
+      font-weight: $fw-semibold;
+      @include respond-above(md) {
+        font-size: $fs-large;
+      }
+    }
+
+    @include respond-below(md) {
+      background-color: $beige-franjas2;
+    }
+    .e-intro {
+      margin-top: $v-unit-l;
+      font-weight: $fw-black;
+    }
+    .clip-inferior {
+      width: 100%;
+      height: $cientotreinta;
+      position: relative;
+      @include respond-below(md) {
+        display: none;
+      }
+    }
+  }
+}

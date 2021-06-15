@@ -1,0 +1,42 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.c-aside {
+  &.--blog,
+  &.--noticias {
+    position: relative;
+    z-index: 6;
+  }
+
+  @include respond-above(md) {
+    &.--blog,
+    &.--noticias {
+      @include flex(0, 0, 25%);
+    }
+
+    &.--blog {
+      transform: translateY(-100px);
+    }
+
+    &.--noticias {
+      transform: translateY(-50px);
+    }
+  }
+
+  @include respond-below(md) {
+    &.--blog {
+      @include flex(0, 0, 100%);
+      transform: translateY(-30px);
+      order: 1;
+
+      .e-tags {
+        display: none;
+      }
+    }
+  }
+}

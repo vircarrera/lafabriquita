@@ -1,0 +1,43 @@
+//
+// Vars
+//
+$headerHeight: 60px;
+$e-logo-height: 60px;
+$topminheight: calc(#{$e-logo-height} + #{$v-unit-m});
+$seis: 6px;
+
+//
+// Styles
+//
+
+.e-check {
+  position: absolute;
+  display: none;
+}
+
+.e-check:checked + label{
+  .--uno{
+    transform: rotate(45deg);
+    top:$seis;
+  }
+  .--dos{
+    opacity:0;
+  }
+  .--tres{
+    transform: rotate(-45deg);
+    top:$seis;
+  }
+}
+
+.e-check:checked {
+
+  & ~ .b-header.--bottom {
+    // max-height: 100vh;/*tocado*/
+    height: 100%;/*lo puse yo*/
+    opacity: 1;
+  }
+
+  & ~ .desplegable__desplegable {
+    max-height: 100% !important;
+  }
+}

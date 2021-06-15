@@ -1,0 +1,101 @@
+$veinticinco: 25px; 
+$cuarenta: 40px; 
+$noventa: 90px;
+
+.home{
+    .c-home-accesos-directos{
+        position: relative;
+        z-index: 200;
+        background-color: $beige-franjas2;
+        .container{
+            @include display-flex;
+            @include justify-content(space-evenly);
+            @include flex-wrap(wrap);
+            padding-top: $noventa;
+            padding-bottom: $noventa;
+            .b-home-noticias,
+            .b-home-blog{
+
+                .imgdestacada{
+                    margin: $v-unit 0;
+                    position: relative;
+                    z-index: 5;
+                    display: inline-block;
+                    img {
+                        border-radius: $br-thin;
+                        overflow: hidden;
+                    }
+                    .e-arrow {
+                        @include flex-center;
+                        position: absolute;
+                        z-index: 6;
+                        width: $unit50;
+                        height: $unit50;
+                        bottom: $veinticinco;
+                        right: $veinticinco;
+                        background-color: $beige-franjas2;
+                        border-radius: $br-pildora;
+                        transition: background-color 0.3s linear;
+                        .ico-flecha{
+                            margin-bottom: $v-unit-xs;
+                            &::before{
+                                color: $granate;
+                                transition: color 0.3s linear;
+                            }
+                        }
+                    }
+                    a:hover {
+                        .e-arrow{
+                            background-color: $granate;
+                        }
+                        .ico-flecha{
+                            &::before{
+                                color: $beige-franjas2;
+                            }
+                        }
+                      
+                    }
+                    
+                }
+                .wrapper{
+                    width: 100%;
+                    @include flex-center;
+                }
+                    
+                @include respond-above(sm){
+                    @include flex(0, 0, 40%);
+                    @include display-flex;
+                    @include flex-direction-column;
+                    @include justify-content(center);
+                    p{
+                        margin-bottom: $unit50;
+                    }
+                }
+                @include respond-below(sm){
+                    @include flex(0, 0, 100%);
+                    p{
+                        margin-bottom: $cuarenta;
+                    }
+                    .imgdestacada{
+                        @include display-flex;
+                        img {
+                            min-width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+
+            .b-home-blog{
+                @include respond-below(sm){
+                    margin-bottom: $unit100;
+                }
+            }
+
+        }
+        
+        
+    }
+
+
+}

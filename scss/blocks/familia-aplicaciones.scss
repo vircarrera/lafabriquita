@@ -1,0 +1,149 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.c-aplicaciones {
+  position: relative;
+  background: $granate;
+  padding-top: calc(#{$v-unit-xl} + 10px);
+
+  .clip-inferior {
+    overflow: visible;
+    top: 0;
+    bottom: auto;
+  }
+
+  .b-aplicaciones {
+    &.intro {
+      position: relative;
+
+      .e-imagen {
+        border: 3px solid $granate;
+        background: $white;
+        border-radius: 100%;
+        width: 130px;
+        height: 130px;
+        margin: 0 auto;
+        @include display-flex();
+        @include justify-content(center);
+        @include align-items(center);
+        position: absolute;
+        left: 0;
+        right: 0;
+
+        @include respond-above(md) {
+          top: -180px;
+        }
+        @include respond-below(md) {
+          top: -160px;
+        }
+      }
+
+      .h2,
+      p {
+        color: $white;
+        text-align: center;
+      }
+
+      .h2 {
+        margin-bottom: $v-unit-l;
+        font-size: $fs-big;
+        font-family: $ff-secondary;
+      }
+
+      p {
+        margin-bottom: $v-unit-xl;
+        font-size: $fs-footer;
+        line-height: 30px;
+      }
+    }
+
+    &.slider {
+      max-height: 540px;
+
+      .b-slide {
+        width: 100%;
+        overflow: hidden;
+        display: block;
+
+        img {
+          max-width: none;
+          object-fit: cover;
+          @include respond-below(tb){
+            min-height: inherit;
+            width: auto;
+          }
+          @include respond-above(tb){
+            min-height: none;
+            width: 100%;
+          }
+        }
+
+        @include respond-above(xl) {
+          min-height: 670px;
+          overflow: hidden;
+          height: auto;
+          width: 100%;
+
+          // img {
+          //   //transform: translateX(-15%);
+          //   min-height: inherit;
+          // }
+        }
+
+        @include respond-between(lg,xl) {
+          min-height: 670px;
+          overflow: hidden;
+          height: auto;
+          width: 100%;
+
+          // img {
+          //   min-height: inherit;
+          // }
+        }
+
+        @include respond-between(tb,lg) {
+          min-height: 560px;
+          overflow: hidden;
+          height: 100%;
+          // border:1px solid green;
+
+          // img {
+          //   max-height: inherit;
+          //   min-width: -webkit-fill-available;
+          // }
+        }
+
+        @include respond-between(sm,tb) {
+          min-height: 560px;
+          // height: 100%;
+          // img {
+          //   min-height: 100%;
+
+          // }
+        }
+
+        @include respond-between(xs,sm) {
+          min-height: 300px;
+          // height: 100%;
+
+          // img {
+          //   max-height: inherit;
+          //   min-width: -webkit-fill-available;
+          // }
+        }
+
+        @include respond-below(xs) {
+          min-height: 300px;
+          // height: 100%;
+          @include display-flex;
+          @include justify-content(center);
+        }
+      }
+    }
+  }
+}

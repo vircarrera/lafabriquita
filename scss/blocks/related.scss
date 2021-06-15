@@ -1,0 +1,36 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.b-related {
+  &.--course {
+    @include flex(0, 0, 100%);
+
+    .c-subtitle {
+      margin-bottom: $v-unit-l;
+    }
+
+    .e-related {
+      &.--course {
+        @include display-flex();
+        @include flex-wrap(wrap);
+
+        .b-card {
+          margin-right: $v-unit-l;
+        }
+
+        @include respond-below(sm) {
+          @include justify-content(center);
+
+          .b-card {
+            margin: 0 auto $v-unit-l;
+          }
+        }
+      }
+    }
+  }
+}

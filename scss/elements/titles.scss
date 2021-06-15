@@ -1,0 +1,192 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.e-title {
+  font-family: $ff-secondary;
+  text-transform: uppercase;
+  line-height: $lh-easy;
+  font-size: $fs-extrabig;
+  font-weight: $fw-semibold;
+
+  @include respond-below(md) {
+    font-size: $fs-subtitle;
+    line-height: $lh-normal;
+  }
+
+  strong {
+    font-weight: bolder;
+    line-height: $lh-normal;
+
+    @include respond-above(md) {
+      line-height: $lh-easy;
+    }
+    @include respond-below(md) {
+      line-height: $lh-normal;
+    }
+  }
+}
+
+.e-title-calidad {
+  font-family: $ff-secondary;
+  text-transform: uppercase;
+  line-height: $lh-reset;
+  font-size: $fs-big;
+  font-weight: $fw-semibold;
+
+  @include respond-below(md) {
+    font-size: $fs-treinti;
+    line-height: $lh-normal;
+  }
+
+  strong {
+    font-weight: bolder;
+
+    @include respond-above(md) {
+      line-height: $lh-reset;
+    }
+
+    @include respond-below(md) {
+      line-height: $lh-normal;
+    }
+  }
+}
+
+.e-title-producto {
+  font-family: $ff-secondary;
+  text-transform: uppercase;
+  line-height: $lh-reset;
+  font-size: $fs-big;
+  font-weight: $fw-semibold;
+
+  @include respond-below(md) {
+    font-size: $fs-large;
+    line-height: $lh-normal;
+  }
+
+  strong {
+    font-weight: bolder;
+
+    @include respond-above(md) {
+      line-height: $lh-reset;
+    }
+
+    @include respond-below(md) {
+      line-height: $lh-normal;
+    }
+  }
+}
+
+.h2 {
+  font-family: $ff-secondary;
+  text-transform: uppercase;
+  line-height: $lh-easy;
+  font-size: $fs-subtitle;
+  font-weight: $fw-semibold;
+  margin: $v-unit-s 0;
+
+  @include respond-below(md) {
+    font-size: $fs-heroe;
+    line-height: $lh-normal;
+  }
+
+  strong {
+    font-weight: bolder;
+    margin: 0 auto;
+
+    @include respond-above(md) {
+      line-height: $lh-easy;
+    }
+
+    @include respond-below(md) {
+      line-height: $lh-normal;
+    }
+  }
+}
+
+.h3 {
+  font-family: $ff-main;
+  font-size: $fs-standard;
+  font-weight: $fw-bold;
+  text-transform: uppercase;
+  line-height: $lh-easy;
+
+  &.big {
+    font-size: $fs-heroe;
+    line-height: $lh-normal;
+    text-transform: none;
+
+    &.responsive {
+      font-family: $ff-secondary;
+
+      @include respond-below(md) {
+        font-size: $fs-treinti;
+        line-height: $lh-normal;
+      }
+
+      strong {
+        font-weight: bolder;
+        line-height: $lh-normal;
+      }
+    }
+  }
+
+  strong {
+    font-weight: bolder;
+    line-height: $lh-normal;
+  }
+}
+
+.h4 {
+  font-family: $ff-main;
+  font-size: $fs-treinti;
+  font-weight: $fw-bold;
+  line-height: $lh-small;
+  @include respond-below(md) {
+    font-size: $fs-large;
+  }
+
+  strong {
+    font-weight: bolder;
+    line-height: $lh-small;
+  }
+}
+
+p {
+  font-family: $ff-main;
+  line-height: $lh-normal;
+  margin: $v-unit-s 0;
+
+  @include respond-above(md) {
+    font-size: $fs-medium;
+  }
+
+  @include respond-below(md) {
+    font-size: $fs-standard;
+  }
+
+  strong {
+    font-weight: bolder;
+    line-height: $lh-normal;
+  }
+}
+
+.e-title-calidad {
+  font-family: $ff-secondary;
+  text-transform: uppercase;
+  line-height: $lh-reset;
+  font-size: $fs-big;
+  font-weight: $fw-semibold;
+  @include respond-below(md) {
+    font-size: $fs-treinti;
+    line-height: $lh-normal;
+  }
+
+  strong {
+    font-weight: bolder;
+  }
+}

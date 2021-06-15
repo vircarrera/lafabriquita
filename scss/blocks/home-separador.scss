@@ -1,0 +1,18 @@
+$setenta: 70px;
+
+.home{
+    .separador{
+        background-color: $beige-general;
+        position: relative;
+        .container{
+            @include display-flex;
+            @include justify-content(center);
+            overflow: hidden;
+            .e-granja{
+                width: 100%;
+                margin-bottom: $setenta;
+            }
+        }
+    }
+
+}

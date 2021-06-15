@@ -1,0 +1,48 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.c-productos-relacionados {
+  background: $beige-franjas;
+  padding-top: 70px;
+
+  .container {
+    .b-card {
+      .e-featured {
+        position: relative;
+
+        .e-lettering {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+      }
+
+      @include respond-above(lg) {
+        width: 28%;
+      }
+      @include respond-between(sm, lg) {
+        width: 45%;
+        padding-left: $v-unit-l;
+      }
+      @include respond-below(sm) {
+        width: 100%;
+        padding: 0 $v-unit-l;
+      }
+    }
+  }
+
+  .h2 {
+    margin-bottom: $v-unit-l;
+    font-size: $fs-big;
+    font-family: $ff-secondary;
+    text-align: center;
+  }
+}

@@ -1,0 +1,92 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.b-contact {
+  padding: $v-unit-l 0 $v-unit-xxxl;
+  @include display-flex();
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+  @include align-items(flex-start);
+
+  .c-title {
+    @include flex(0, 0, 100%);
+
+    &.e-subtitle-2 {
+      text-align: left;
+    }
+  }
+
+  .c-title,
+  .c-subtitle,
+  .description {
+    margin-bottom: $h-unit-l;
+  }
+
+  .e-direction {
+    margin-top: $h-unit-l;
+  }
+
+  .col__left,
+  .col__right {
+    @include flex(0, 0, 45%);
+  }
+
+  .col__left {
+  }
+
+  .wpcf7-form {
+    > p {
+      @include display-flex();
+      @include flex-wrap(wrap);
+      @include flex-direction-column();
+      //   @include justify-content();
+
+      > span {
+        @include flex(0, 0, 100%);
+        margin-bottom: $v-unit-l;
+
+        > input,
+        > textarea {
+          background: none;
+          font-family: $ff-main;
+
+          &::placeholder {
+            color: $lily-dark;
+          }
+        }
+
+        > input {
+          border: none;
+          border-bottom: 1px solid $dark;
+          padding: $v-unit 0;
+          width: 100%;
+        }
+
+        > textarea {
+          border: 1px solid $dark;
+          padding: $v-unit;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @include respond-below(md) {
+    padding: $v-unit-l 0;
+
+    .col__left {
+      margin-bottom: $v-unit-l;
+    }
+  }
+  @include respond-below(sm) {
+    .col__left,
+    .col__right {
+      @include flex(0, 0, 100%);
+    }
+  }
+}

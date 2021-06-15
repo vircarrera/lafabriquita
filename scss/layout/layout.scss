@@ -1,0 +1,97 @@
+//
+// Vars
+//
+$veinticinco: 25px;
+//
+// Styles
+//
+
+.container {
+  &.principal {
+    @include respond-above(md) {
+      padding-top: 138px;
+    }
+    @include respond-below(md) {
+      padding-top: 80px;
+    }
+  }
+
+  &.w-1920 {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding-left: $veinticinco;
+    padding-right: $veinticinco;
+
+    @include respond-below(md) {
+      padding-left: $h-unit;
+      padding-right: $h-unit;
+    }
+  }
+
+  &.w-1316 {
+    max-width: 1316px;
+    margin: 0 auto;
+    padding-left: $veinticinco;
+    padding-right: $veinticinco;
+    @include respond-below(md) {
+      padding-left: $h-unit;
+      padding-right: $h-unit;
+    }
+  }
+
+  &.w-1200 {
+    max-width: 1200px;
+    margin: 0 auto;
+    @include respond-below(lg) {
+      padding-left: $h-unit;
+      padding-right: $h-unit;
+    }
+  }
+
+  &.w-1130 {
+    max-width: 1130px;
+    margin: 0 auto;
+
+    @include respond-below(md) {
+      padding-left: $h-unit;
+      padding-right: $h-unit;
+    }
+  }
+
+  &.w-1015 {
+    max-width: 1015px;
+    margin: 0 auto;
+    @include respond-below(md) {
+      padding-left: $h-unit;
+      padding-right: $h-unit;
+    }
+  }
+
+  &.w-1084 {
+    max-width: 1084px;
+    margin: 0 auto;
+    @include respond-below(md) {
+      padding-left: $h-unit;
+      padding-right: $h-unit;
+    }
+  }
+
+  &.w-940 {
+    max-width: 940px;
+    margin: 0 auto;
+
+    @include respond-below(md) {
+      padding-left: $h-unit;
+      padding-right: $h-unit;
+    }
+  }
+
+  &.w-663 {
+    max-width: 663px;
+    margin: 0 auto;
+    @include respond-below(md) {
+      padding-left: $h-unit;
+      padding-right: $h-unit;
+    }
+  }
+}

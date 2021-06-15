@@ -1,0 +1,69 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.b-producto {
+  margin-bottom: $v-unit-l;
+  @include display-flex();
+  @include justify-content(center);
+  @include align-items(flex-start);
+
+  .e-title {
+    font-size: $fs-footer;
+    font-family: $ff-secondary;
+    font-weight: 900;
+    line-height: $lh-normal;
+  }
+
+  picture {
+    @include flex(0, 0, 30%);
+    display: block;
+    min-width: 85px;
+    min-height: 120px;
+    margin-right: $v-unit-m;
+  }
+
+  .e-content {
+    @include flex(0, 0, 60%);
+    display: block;
+
+    p {
+      font-size: $fs-standard;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+
+    .e-pretitle {
+      font-size: 17px;
+      font-weight: 100;
+      margin: 0 0 5px;
+    }
+
+    a {
+      display: block;
+      margin-top: 5px;
+    }
+  }
+}
+
+@include respond-above(md) {
+  .b-producto {
+    @include flex(0, 0, 30%);
+  }
+}
+
+@include respond-between(sm, md) {
+  .b-producto {
+    @include flex(0, 0, 48%);
+  }
+}
+
+@include respond-below(sm) {
+  .b-producto {
+    @include flex(0, 0, 100%);
+  }
+}

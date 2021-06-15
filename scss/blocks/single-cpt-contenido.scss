@@ -1,0 +1,95 @@
+.blog-template-default,
+.noticias-template-default {
+    .b-contenido{
+        width: 100%;
+        .e-titulo{
+            line-height: $lh-normal;
+            @include respond-above(md){
+                font-size: $fs-subtitle;
+            }
+            @include respond-below(md){
+                font-size: $fs-heroe;
+            }
+        }
+        .e-fecha{
+            font-size: $fs-medium;
+        }
+
+        img, div{
+            max-width: 100%;
+        }
+
+        img{
+            border-radius: $br-thin;
+            margin: $v-unit-l 0;
+        }
+
+        video{
+            height: auto;
+            margin: $v-unit-l 0;
+        }
+
+        .wp-caption-text{
+            font-size: $fs-standard;
+        }
+
+        .e-paginador{
+            @include display-flex;
+            margin-top: $v-unit-xl;
+            a{
+                font-family: $ff-main;
+                text-transform: uppercase;
+                font-weight: $fw-semibold;
+                @include display-flex;
+                @include flex-direction-column;
+                @include align-items(center);
+                width: fit-content;
+                .e-arrow{
+                    margin-bottom: $v-unit-s;
+                    &.--atras{
+                        @include transform-scaleX(-1);
+                    }
+                }
+                .ico-flecha::before{
+                    color: $new;
+                    transition: color 0.3s linear;
+                }
+                &:hover{
+                    .ico-flecha::before{
+                        color:$granate;
+                    }
+                }
+                @include respond-above(md){
+                    font-size: $fs-heading;
+                }
+                @include respond-below(md){
+                    font-size: $fs-standard;
+                }  
+            }
+
+            a:nth-of-type(2n){
+                margin-left: $v-unit-xl;
+            }
+            @include respond-above(md){
+                @include justify-content(flex-end);
+            }
+            @include respond-below(md){
+                @include justify-content(center);
+                margin-bottom: $v-unit-xl;
+            }
+        }
+
+        a{
+            font-weight: $fw-semibold;
+            transition: color 0.3s linear;
+            &:hover{
+                color: $new;
+            }
+        }
+
+        @include respond-below(md){
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}

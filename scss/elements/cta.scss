@@ -1,0 +1,97 @@
+// vars
+$cuarenta: 40px;
+.g-recaptcha{
+  display: none;
+}
+
+.cta { 
+  display: inline-block;
+  cursor: pointer;
+  &.cta-golden {
+    background: $golden;
+    text-align: center;
+    border-radius: $br-thin;
+    padding: $v-unit-s $h-unit;
+    text-transform: uppercase;
+    color: $white;
+    font-size: $fs-medium;
+    font-weight: $fw-bold;
+    font-family: $ff-main;
+    line-height: $lh-standard;
+    box-shadow: $boxshadow-vertical;
+
+    transition: background-color 0.3s linear,color 0.3s linear;
+    &:hover {
+      background-color: rgba(179, 141, 95, 0.15);
+      color: $new;
+    }
+  }
+
+  &.cta-granate {
+    background: $granate;
+    font-size: $fs-standard;
+    font-weight: $fw-bold;
+    font-family: $ff-main;
+    padding: $v-unit-s $h-unit;
+    border-radius: $br-thin;
+    color: $white;
+    transition: background-color 0.3s linear;
+    &:hover {
+      background-color: $new;
+      color: $white;
+    }
+  }
+
+  &.cta-pildora {
+    background: $golden;
+    text-align: center;
+    border-radius: $br-pildora;
+    padding: $v-unit-s $cuarenta;
+    color: $white;
+    font-size: $fs-medium;
+    font-weight: $fw-bold;
+    font-family: $ff-main;
+    box-shadow: $boxshadow-vertical;
+    transition: background-color 0.3s linear,color 0.3s linear;
+    &:hover {
+      background-color: rgba(179, 141, 95, 0.15);
+      color: $new;
+    }
+  }
+
+  &.cta-light {
+    color: $golden;
+    font-size: $fs-read;
+    font-weight: $fw-bold;
+    font-family: $ff-main;
+    text-decoration: underline;
+    text-transform: uppercase;
+    transition: color 0.3s linear;
+    &:hover {
+      color: $granate;
+    }
+  }
+}
+
+.contacto__enviar {
+  &.wpcf7-submit{
+    background: $beige-franjas2 !important;
+    text-align: center;
+    font-size: $fs-medium;
+    font-weight: $fw-bold;
+    font-family: $ff-main;
+    padding: $v-unit-s $h-unit-xl !important;
+    border-radius: $br-peq;
+    text-transform: uppercase;
+    color: $black;
+    box-shadow: $boxshadow-suave;
+    transition: background-color 0.3s linear, color 0.3s linear;
+
+    &:hover {
+      background-color: $new !important;
+      color: $white !important;
+    }
+  }
+}
+
+

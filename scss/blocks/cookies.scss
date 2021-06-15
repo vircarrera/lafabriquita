@@ -1,0 +1,34 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.cc_container {
+  background-color: $white !important;
+  color: $darkest !important;
+  border-top: 3px solid $darkest;
+
+  .cc_message {
+    color: $darkest !important;
+  }
+
+  a.cc_btn {
+    background: $primary !important;
+    color: $white !important;
+    font-weight: 700;
+
+    &:hover {
+      background: $primaryhover !important;
+    }
+  }
+
+  a.cc_more_info {
+    background: $primary !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+}

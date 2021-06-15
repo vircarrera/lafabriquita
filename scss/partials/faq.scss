@@ -1,0 +1,89 @@
+.page-template-page-faq {
+  .faq-intro {
+    position: relative;
+    text-align: center;
+    .h1 {
+      font-size: $fs-subtitle;
+      text-transform: uppercase;
+      font-weight: $fw-black;
+      font-family: $ff-secondary;
+      margin-bottom: $v-unit;
+    }
+
+    .subtitulo {
+      font-weight: $fw-bold;
+      font-family: $ff-main;
+      line-height: $lh-normal;
+      margin-bottom: $v-unit-l;
+      @include respond-above(md) {
+        font-size: $fs-treinti;
+      }
+      @include respond-below(md) {
+        font-size: $fs-large;
+      }
+    }
+
+    form {
+      position: relative;
+      .search__input {
+        width: 100%;
+        height: 40px;
+        background: none !important;
+        color: black;
+        border: 3px solid $otro;
+        border-radius: $br-pildora;
+        font-size: $fs-read;
+        padding-right: 40px;
+        padding-left: 20px;
+        &::placeholder {
+          font-family: $ff-main;
+          font-weight: $fw-bold;
+          font-size: $fs-standard;
+          color: $black;
+        }
+      }
+      .search__button {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        margin: auto;
+        right: 2%;
+      }
+      .search__button i {
+        color: $black;
+        font-size: $fs-medium;
+      }
+      @include respond-above(sm) {
+        width: 60%;
+        max-width: 726px;
+        margin: 0 auto;
+      }
+      @include respond-below(sm) {
+        width: 100%;
+      }
+    }
+
+    @include respond-above(md) {
+      padding: 60px 0 200px 0;
+    }
+    @include respond-below(md) {
+      padding: 60px 15px 80px 15px;
+    }
+  }
+
+  .faq-contenido {
+    background-color: $beige-franjas;
+
+    .wrapper {
+      max-width: 972px;
+      margin: 0 auto;
+    }
+
+    @include respond-above(md) {
+      padding: 120px 0 130px 0;
+    }
+    @include respond-below(md) {
+      padding: 40px 15px 100px 15px;
+    }
+  }
+}

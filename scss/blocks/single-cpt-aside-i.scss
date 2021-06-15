@@ -1,0 +1,29 @@
+.blog-template-default,
+.noticias-template-default {
+    .--izq{
+        max-width: 663px;
+        margin: 0 auto;
+        display: block;
+        width: 100%;
+        a{
+            font-family: $ff-main;
+            font-weight: $fw-bold;
+            line-height: $lh-normal;
+            transition: color 0.3s linear;
+            @include respond-above(md){
+                font-size: $fs-medium;
+            }
+            @include respond-below(md){
+                font-size: $fs-standard;
+            }
+            &:hover{
+                color:$new;
+            }
+        }
+        @include respond-below(md){
+            padding-left: $h-unit;
+            padding-right: 40%;
+            margin-bottom: $v-unit-l;
+        }
+    }
+}

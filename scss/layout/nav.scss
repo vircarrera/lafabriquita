@@ -1,0 +1,61 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.navcontainer {
+  @include display-flex;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include respond-above(md) {
+    flex: 0 80%;
+    @include justify-content(space-between);
+    @include align-items(center);
+  }
+
+  @include respond-below(md) {
+    @include flex-direction-column;
+    background-color: $grey;
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0vh;
+    overflow: hidden;
+    transition: height 0.5s;
+    background-image: url(#{$img-backgrounds}/fondoazul.svg);
+  }
+
+  @include respond-between(sm, md) {
+    background-image: url(#{$img-backgrounds}/fondoazul.svg);
+  }
+
+  @include respond-below(sm) {
+    background-image: url(#{$img-backgrounds}/fondoazul-movil.svg);
+  }
+
+  .e-nav {
+    @include display-flex;
+    @include align-items(center);
+
+    @include respond-below(md) {
+      &.--top {
+        flex: 0 75%;
+        @include display-flex;
+        @include align-items(center);
+        @include justify-content(center);
+        @include flex-direction-column;
+      }
+      &.--redes {
+        flex: 0 25%;
+        @include display-flex;
+        @include justify-content(center);
+      }
+    }
+  }
+}

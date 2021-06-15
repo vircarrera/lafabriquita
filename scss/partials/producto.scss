@@ -1,0 +1,74 @@
+$ochocientos: 800px;
+$seiscientos: 600px;
+$quinientos: 500px;
+$trescientoscuarenta: 340px;
+$ochenta: 80px;
+$cuarenta: 40px;
+
+.single-post{
+    text-align: center;
+    @include respond-above(md){
+        background-color: $white; 
+    }
+    @include respond-below(md){
+        background-color: $beige-franjas;       
+    }
+
+    .b-featured{
+        position: relative;
+        background: url("img/backgrounds/tablamadera.png") no-repeat bottom;
+        background-size: 100% 60%;
+        @include respond-above(lg){
+            min-height: $seiscientos;
+        }
+        @include respond-between(md,lg){
+            min-height: $quinientos;
+        }
+        @include respond-below(md){
+            min-height: $trescientoscuarenta;
+        }
+        .e-title-producto{
+            @include respond-above(md){
+                margin-top: $ochenta;
+                margin-bottom: $cuarenta;
+            }
+            @include respond-below(md){
+                margin-top: $cuarenta;
+                margin-bottom: $unit50;
+            }
+        }
+        picture{
+            width: 100%;
+            @include display-flex;
+            @include justify-content(center);
+            img{
+                @include respond-above(lg){
+                    max-width: $ochocientos;
+                }
+            }
+        }
+    }
+
+    .c-content{
+        background-color: $beige-general;
+        .texto{
+            p{
+                font-weight: $fw-bold;        
+                margin-bottom: $v-unit-xl;        
+            }
+        }
+        .wrapper{
+            width: 100%;
+            @include respond-above(md){
+                @include display-flex;
+                @include justify-content(flex-end);
+            }
+        }
+        @include respond-above(md){
+            padding: $ochenta 0;
+        }
+        @include respond-below(md){
+            padding: $v-unit-xl 0;
+        }
+    }
+}
